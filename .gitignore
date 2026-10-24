@@ -1,0 +1,30 @@
+# İşletim sistemi / editör
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Node / araçlar
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# Ortam ve gizli dosyalar
+.env
+.env.*
+!.env.example
+
+# Büyük kurulum dosyaları — GitHub Releases kullanın
+*.exe
+*.msi
+*.zip
+*.7z
+VortexisSetup.exe
+
+# Geçici çıktılar
+*.log
+tmp/
+dist/

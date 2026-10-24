@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kayıt ol — Vortexis</title>
+  <meta name="description" content="Ücretsiz Vortexis hesabı oluşturun.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#06070b">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/img/logo-256.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-256.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("vortexis.theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        document.documentElement.classList.add("js");
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="register" data-auth-page>
+  <div class="auth-page">
+    <aside class="auth-aside">
+      <a class="brand auth-brand" href="index.html" aria-label="Vortexis ana sayfa">
+        <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+        <span class="brand-word">VORTEXIS</span>
+        <span class="brand-badge">WEB</span>
+      </a>
+      <div class="auth-aside-inner">
+        <span class="section-kicker">Ücretsiz başlayın</span>
+        <h2>Bakım rutininizi bugün kurun.</h2>
+        <p>Yerel bir hesap oluşturun; ayarlarınız ve tarama geçmişiniz cihazınızda kalsın. Kredi kartı gerekmez.</p>
+        <ul class="auth-feature-list">
+          <li><svg class="icon"><use href="assets/icons.svg#check-circle"></use></svg> Tüm masaüstü özellikleri ücretsiz</li>
+          <li><svg class="icon"><use href="assets/icons.svg#check-circle"></use></svg> Tek EXE, hızlı kurulum</li>
+          <li><svg class="icon"><use href="assets/icons.svg#check-circle"></use></svg> TR / EN arayüz</li>
+          <li><svg class="icon"><use href="assets/icons.svg#check-circle"></use></svg> Yerel veri, bulut zorunluluğu yok</li>
+        </ul>
+        <div class="auth-aside-visual">
+          <img src="assets/img/oneclick-dark.png" alt="Vortexis tek tık bakım ekranı" loading="lazy">
+        </div>
+      </div>
+      <p class="auth-note" style="text-align:left;position:relative;z-index:1">© <span data-year>2026</span> Vortexis · <a href="privacy.html" style="color:var(--muted)">Gizlilik</a> · <a href="terms.html" style="color:var(--muted)">Kullanım şartları</a></p>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-card">
+        <a class="brand auth-mobile-brand" href="index.html" aria-label="Vortexis ana sayfa">
+          <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+          <span class="brand-word">VORTEXIS</span>
+        </a>
+        <div class="auth-head">
+          <h1>Ücretsiz hesap oluşturun.</h1>
+          <p>Birkaç bilgiyle başlayın. Zaten hesabınız var mı? <a href="login.html" style="color:var(--accent-2);font-weight:800">Giriş yapın</a>.</p>
+        </div>
+
+        <form class="auth-form" data-auth-form="register" novalidate>
+          <div class="auth-error" data-auth-error hidden></div>
+          <div class="field">
+            <label for="register-name">Ad soyad</label>
+            <div class="input-wrap">
+              <svg class="icon"><use href="assets/icons.svg#user"></use></svg>
+              <input class="input" id="register-name" name="name" type="text" placeholder="Adınız ve soyadınız" autocomplete="name" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="register-email">E-posta</label>
+            <div class="input-wrap">
+              <svg class="icon"><use href="assets/icons.svg#mail"></use></svg>
+              <input class="input" id="register-email" name="email" type="email" placeholder="ornek@eposta.com" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="register-password">Parola</label>
+            <div class="input-wrap">
+              <svg class="icon"><use href="assets/icons.svg#key"></use></svg>
+              <input class="input has-toggle" id="register-password" name="password" type="password" placeholder="En az 8 karakter" autocomplete="new-password" required>
+              <button class="password-toggle" type="button" data-password-toggle data-target="#register-password" aria-label="Parolayı göster">
+                <svg class="icon"><use href="assets/icons.svg#eye"></use></svg>
+              </button>
+            </div>
+            <div class="password-strength" data-strength="#register-password" data-score="0">
+              <div class="strength-bars">
+                <span class="strength-bar"></span><span class="strength-bar"></span><span class="strength-bar"></span><span class="strength-bar"></span>
+              </div>
+              <span class="strength-label" data-strength-label>En az 8 karakter</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="register-confirm">Parola (tekrar)</label>
+            <div class="input-wrap">
+              <svg class="icon"><use href="assets/icons.svg#lock"></use></svg>
+              <input class="input has-toggle" id="register-confirm" name="confirm" type="password" placeholder="Parolanızı tekrar girin" autocomplete="new-password" required>
+              <button class="password-toggle" type="button" data-password-toggle data-target="#register-confirm" aria-label="Parolayı göster">
+                <svg class="icon"><use href="assets/icons.svg#eye"></use></svg>
+              </button>
+            </div>
+          </div>
+          <div class="form-row" style="align-items:flex-start">
+            <label class="checkbox"><input type="checkbox" name="terms" required> <span><a href="terms.html">Kullanım şartlarını</a> ve <a href="privacy.html">gizlilik politikasını</a> kabul ediyorum.</span></label>
+          </div>
+          <button class="btn btn--primary btn--lg btn--block" type="submit">
+            <svg class="icon"><use href="assets/icons.svg#user"></use></svg>
+            Hesap oluştur
+          </button>
+        </form>
+
+        <div class="demo-box">
+          <svg class="icon"><use href="assets/icons.svg#info"></use></svg>
+          <p><strong>Demo notu:</strong> Bu statik sürümde hesaplar yalnızca tarayıcınızda saklanır. Parolalar PBKDF2-SHA256 ile hashlenir; gerçek üretim için sunucu tarafı kimlik doğrulama gerekir.</p>
+        </div>
+
+        <p class="auth-alt">Zaten hesabınız var mı? <a href="login.html">Giriş yapın</a></p>
+        <p class="auth-note">Kayıt olarak <a href="terms.html" style="color:var(--muted)">Kullanım Şartları</a> ve <a href="privacy.html" style="color:var(--muted)">Gizlilik Politikası</a>'nı kabul etmiş olursunuz.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

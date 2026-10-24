@@ -1,0 +1,49 @@
+{
+  "name": "Vortexis — Windows için akıllı sistem bakımı",
+  "short_name": "Vortexis",
+  "description": "Bakım, canlı izleme, hız testi ve güvenlik kontrollerini tek panelde birleştiren Windows uygulaması.",
+  "lang": "tr",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#06070b",
+  "theme_color": "#06070b",
+  "categories": ["utilities", "productivity", "security"],
+  "icons": [
+    {
+      "src": "assets/img/logo-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/logo-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/img/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Threat Lab",
+      "short_name": "Tarama",
+      "description": "Hash, URL veya dosya taraması başlatın.",
+      "url": "./scanner.html",
+      "icons": [{ "src": "assets/img/logo-256.png", "sizes": "256x256" }]
+    },
+    {
+      "name": "İndir",
+      "short_name": "İndir",
+      "description": "Vortexis kurulum dosyasını indirin.",
+      "url": "./download.html",
+      "icons": [{ "src": "assets/img/logo-256.png", "sizes": "256x256" }]
+    }
+  ]
+}

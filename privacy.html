@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gizlilik Politikası — Vortexis</title>
+  <meta name="description" content="Vortexis web sitesi ve masaüstü uygulamasında verilerin nasıl işlendiğini, saklandığını ve korunduğunu öğrenin.">
+  <link rel="canonical" href="https://vortexisecure.github.io/Vortexisecure/privacy.html">
+  <meta name="theme-color" content="#06070b">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/img/logo-256.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-256.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("vortexis.theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        document.documentElement.classList.add("js");
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="privacy">
+  <a class="sr-only" href="#main">İçeriğe geç</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+        <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+        <span class="brand-word">VORTEXIS</span>
+        <span class="brand-badge">WEB</span>
+      </a>
+      <nav class="nav-links" aria-label="Ana menü">
+        <a class="nav-link" data-nav="home" href="index.html">Ana Sayfa</a>
+        <a class="nav-link" data-nav="features" href="features.html">Özellikler</a>
+        <a class="nav-link" data-nav="scanner" href="scanner.html">Threat Lab</a>
+        <a class="nav-link" data-nav="download" href="download.html">İndir</a>
+        <a class="nav-link" data-nav="pricing" href="pricing.html">Planlar</a>
+        <a class="nav-link" data-nav="support" href="support.html">Destek</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-search-open aria-label="Sitede ara" title="Sitede ara (Ctrl+K)">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#search"></use></svg>
+        </button>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Açık temaya geç" title="Açık tema">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sun"></use></svg>
+        </button>
+        <a class="btn btn--ghost nav-login" data-auth="guest" href="login.html">Giriş</a>
+        <a class="btn btn--primary" data-auth="guest" href="download.html"><svg class="icon"><use href="assets/icons.svg#download"></use></svg> Ücretsiz indir</a>
+        <a class="nav-user" data-auth="user" href="account.html" hidden>
+          <span class="nav-avatar" data-auth-initials>V</span>
+          <span data-auth-name>Hesabım</span>
+        </a>
+        <button class="icon-btn mobile-toggle" type="button" data-menu-toggle aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <nav aria-label="Mobil menü">
+        <a class="mobile-link" data-nav="home" href="index.html">Ana Sayfa <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="features" href="features.html">Özellikler <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="scanner" href="scanner.html">Threat Lab <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="download" href="download.html">İndir <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="pricing" href="pricing.html">Planlar <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="support" href="support.html">Destek <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+      </nav>
+      <div class="mobile-actions">
+        <a class="btn btn--ghost" data-auth="guest" href="login.html">Giriş yap</a>
+        <a class="btn btn--ghost" data-auth="guest" href="register.html">Kayıt ol</a>
+        <a class="btn btn--primary" href="download.html">Ücretsiz indir</a>
+        <a class="btn btn--ghost" data-auth="user" href="account.html" hidden>Hesabım</a>
+        <button class="btn btn--ghost" type="button" data-auth="user" data-logout hidden>Çıkış yap</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" class="legal-page">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Ana Sayfa</a><svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg><span>Gizlilik Politikası</span></div>
+
+      <div class="legal-layout">
+        <aside class="legal-toc" aria-label="İçindekiler">
+          <h4>İçindekiler</h4>
+          <a href="#ozet">Özet</a>
+          <a href="#kapsam">Kapsam</a>
+          <a href="#website">Web sitesi verileri</a>
+          <a href="#hesap">Demo hesap</a>
+          <a href="#threat-lab">Threat Lab</a>
+          <a href="#masaustu">Masaüstü uygulaması</a>
+          <a href="#cerezler">Çerezler ve üçüncü taraflar</a>
+          <a href="#saklama">Saklama ve silme</a>
+          <a href="#guvenlik">Güvenlik</a>
+          <a href="#haklar">Haklarınız</a>
+          <a href="#cocuklar">Çocuklar</a>
+          <a href="#degisiklikler">Değişiklikler</a>
+          <a href="#iletisim">İletişim</a>
+        </aside>
+
+        <article class="legal-content">
+          <h1>Gizlilik Politikası</h1>
+          <p class="legal-updated">Son güncelleme: 24 Ekim 2026 · Sürüm 1.0</p>
+
+          <div class="notice">
+            <svg class="icon"><use href="assets/icons.svg#shield-check"></use></svg>
+            <span>Vortexis gizliliği bir özellik olarak görür. Web sitemiz ve masaüstü uygulamamız, zorunlu bulut hesabı veya arka plan telemetrisi olmadan çalışacak şekilde tasarlanmıştır.</span>
+          </div>
+
+          <h2 id="ozet">1. Özet</h2>
+          <p>Bu politika, Vortexis web sitesini (<strong>vortexis.example</strong> ve GitHub Pages üzerindeki kopyalarını) ve Windows için Vortexis masaüstü uygulamasını ziyaret ettiğinizde veya kullandığınızda hangi bilgilerin işlendiğini açıklar.</p>
+          <ul>
+            <li>Web sitemiz statik bir tanıtım ve demo sitesidir. Ziyaretçi verilerini toplayan bir uygulama sunucusu işletmiyoruz.</li>
+            <li>Demo hesap, oturum ve tarama geçmişi yalnızca tarayıcınızın yerel depolamasında tutulur.</li>
+            <li>Threat Lab’a yüklediğiniz dosyalar cihazınızdan dışarı gönderilmez; tarama sonuçları demo amaçlı simüle edilir.</li>
+            <li>Masaüstü uygulaması telemetri, reklam kimliği veya kullanım analitiği göndermez.</li>
+          </ul>
+
+          <h2 id="kapsam">2. Kapsam</h2>
+          <p>Bu politika iki ayrı yüzeyi kapsar:</p>
+          <ul>
+            <li><strong>Web sitesi:</strong> Tanıtım sayfaları, Threat Lab demo tarayıcısı, demo kayıt/giriş ekranları ve destek sayfaları.</li>
+            <li><strong>Masaüstü uygulaması:</strong> Windows 10/11 üzerinde çalışan Vortexis kurulumu ve yerel hesap özellikleri.</li>
+          </ul>
+          <p>Bu politika, üçüncü taraf sitelerin veya hizmetlerin veri uygulamalarını kapsamaz. Bu hizmetlere bağlantı verdiğimizde ilgili gizlilik politikalarını incelemenizi öneririz.</p>
+
+          <h2 id="website">3. Web sitesinde işlenen veriler</h2>
+          <h3>3.1 Yerel depolama</h3>
+          <p>Site; tema tercihinizi, demo hesap kayıtlarını, oturum bilgisini ve son tarama geçmişinizi tarayıcınızın <code>localStorage</code> alanında saklar. Bu veriler bize iletilmez ve sunucularımızda tutulmaz. Tarayıcı verilerini temizlediğinizde veya gizli pencerede gezinmeyi kapattığınızda bu kayıtlar silinir.</p>
+          <p>Kullanılan anahtarlar:</p>
+          <ul>
+            <li><code>vortexis.theme</code> — açık/koyu tema tercihi.</li>
+            <li><code>vortexis.users.v1</code> — demo hesap adı, e-posta adresi ve PBKDF2 parola özeti.</li>
+            <li><code>vortexis.session.v1</code> — demo oturum kimliği.</li>
+            <li><code>vortexis.scans.v1</code> — son taramaların özeti.</li>
+          </ul>
+
+          <h3>3.2 Formlar</h3>
+          <p>Bülten aboneliği ve iletişim formları bu statik sürümde yalnızca arayüz demosudur. Forma girdiğiniz bilgiler bir sunucuya gönderilmez; yalnızca tarayıcınızda kısa süreli bir bildirim gösterilir. Gerçek bir iletişim talebi için <a href="support.html#contact">destek sayfasındaki</a> e-posta adresini kullanabilirsiniz.</p>
+
+          <h2 id="hesap">4. Demo hesap ve kimlik doğrulama</h2>
+          <p>Demo kayıt ekranında girdiğiniz ad, e-posta ve parola yalnızca tarayıcınızda işlenir. Parolanız düz metin olarak saklanmaz; PBKDF2-SHA256 algoritmasıyla türetilmiş bir özet ve rastgele bir salt değeri saklanır. Bu işlem, tarayıcının Web Crypto API’si kullanılarak cihazınızda gerçekleştirilir.</p>
+          <div class="notice notice--warning">
+            <svg class="icon"><use href="assets/icons.svg#alert-triangle"></use></svg>
+            <span>Bu kimlik doğrulama sistemi <strong>yalnızca demo amaçlıdır</strong>. Gerçek üretim ortamında hesaplar, parolalar ve oturumlar için sunucu tarafı bir kimlik doğrulama servisi, HTTPS ve güvenli çerezler gerekir. Demo hesabınızla kritik veya kişisel bilgi saklamayın.</span>
+          </div>
+
+          <h2 id="threat-lab">5. Threat Lab ve taramalar</h2>
+          <p>Threat Lab, VirusTotal benzeri bir arayüz deneyimi sunan bir demodur. Girdiğiniz hash veya URL ile seçtiğiniz dosya tarayıcınızda işlenir:</p>
+          <ul>
+            <li><strong>Hash ve URL:</strong> Girdi, tarayıcıda normalize edilir ve demo sonuç üretmek için kullanılır. Dışarıya sorgu gönderilmez.</li>
+            <li><strong>Dosya:</strong> Dosyanın SHA-256 özeti tarayıcıda hesaplanır. Dosya içeriği hiçbir sunucuya yüklenmez.</li>
+            <li><strong>Sonuçlar:</strong> Satıcı tespitleri, risk puanı ve topluluk yorumları gerçek bir tehdit istihbaratı hizmetinden gelmez; simüle edilir.</li>
+            <li><strong>Geçmiş:</strong> Son taramalar yalnızca yerel depolamada tutulur ve hesap sayfanızdan temizlenebilir.</li>
+          </ul>
+          <p>Gerçek bir dosya analizi veya tehdit istihbaratı için güvenilir bir antivirüs motoru ve yetkili bir tarama servisi kullanmalısınız. Ayrıntılar için <a href="scanner.html#disclaimer">tarama uyarısını</a> okuyun.</p>
+
+          <h2 id="masaustu">6. Masaüstü uygulaması</h2>
+          <p>Vortexis masaüstü uygulaması yerel öncelikli çalışır. Uygulama:</p>
+          <ul>
+            <li>Bakım, izleme ve tanılama verilerini cihazınızda işler; bunları bize göndermez.</li>
+            <li>Reklam, analitik veya kullanım izleme SDK’ları içermez.</li>
+            <li>Giriş denemelerini yalnızca yerel denetim amacıyla <code>%LOCALAPPDATA%\Vortexis\.audit\login.log</code> dosyasına yazar. Bu dosya gizli olarak işaretlenir ve erişim izinleri yalnızca geçerli Windows kullanıcısı ve SYSTEM ile sınırlandırılır.</li>
+            <li>Güncelleme kontrolü gibi bir ağ işlemi yalnızca siz açıkça başlattığınızda veya uygulama ayarlarında etkinleştirdiğinizde gerçekleşir.</li>
+          </ul>
+          <p>Uygulamayı kaldırdığınızda yerel ayarlar ve denetim günlüğü gibi kalıntıların silinmesi için kaldırma sonrası <code>%LOCALAPPDATA%\Vortexis</code> klasörünü de silebilirsiniz.</p>
+
+          <h2 id="cerezler">7. Çerezler ve üçüncü taraf hizmetler</h2>
+          <p>Vortexis web sitesi kendi çerezlerini kullanmaz. Ancak aşağıdaki üçüncü taraf hizmetler, sayfa yüklendiğinde teknik veriler (IP adresi, tarayıcı bilgisi, istek zamanı gibi) işleyebilir:</p>
+          <ul>
+            <li><strong>Google Fonts:</strong> Yazı tiplerini sunmak için kullanılır. Google’ın gizlilik politikası geçerlidir.</li>
+            <li><strong>GitHub Pages:</strong> Site barındırma sağlar. GitHub, güvenlik ve kötüye kullanım önleme amacıyla erişim günlükleri tutabilir.</li>
+            <li><strong>GitHub Releases:</strong> Kurulum dosyası indirme bağlantıları bu hizmete yönlendirir.</li>
+          </ul>
+          <p>Bu hizmetlerin veri uygulamaları kendi politikalarına tabidir. Tarayıcınızda üçüncü taraf isteklerini engelleyen bir uzantı kullanabilirsiniz; bu durumda yazı tipleri sistem yazı tipiyle görüntülenebilir.</p>
+
+          <h2 id="saklama">8. Veri saklama ve silme</h2>
+          <p>Web sitesine ait demo veriler, siz silene kadar tarayıcınızda kalır. Hesap sayfanızdaki <strong>Tarama geçmişini temizle</strong> ve <strong>Hesabımı sil</strong> işlemleri yerel kayıtları kaldırır. Demo hesabı silinemez; kendi oluşturduğunuz demo hesapları silebilirsiniz.</p>
+          <p>Tarayıcı ayarlarından site verilerini temizlemek de tüm yerel kayıtları kalıcı olarak siler. Masaüstü uygulamasına ait yerel dosyalar için yukarıdaki klasör yolunu kullanabilirsiniz.</p>
+
+          <h2 id="guvenlik">9. Güvenlik</h2>
+          <p>Demo parolaları PBKDF2-SHA256 ile türetilir ve düz metin olarak saklanmaz. Yine de istemci tarafı depolama, kötü niyetli tarayıcı uzantılarına veya cihaz erişimine karşı sunucu tarafı bir sistem kadar güçlü değildir. Bu nedenle demo hesabında gerçek parolalarınızı veya hassas bilgilerinizi kullanmayın.</p>
+          <p>Bir güvenlik açığı fark ederseniz, lütfen kamuya açık bir hat üzerinden paylaşmadan önce <a href="support.html#contact">destek kanalımız</a> üzerinden bize bildirin.</p>
+
+          <h2 id="haklar">10. Haklarınız</h2>
+          <p>KVKK ve GDPR kapsamında, hakkınızda işlenen kişisel veriler hakkında bilgi talep etme, düzeltme, silme, işlemeye itiraz etme ve veri taşınabilirliği haklarına sahip olabilirsiniz. Web sitemizde kişisel verilerinizi merkezi olarak işlemediğimiz için bu taleplerin büyük bölümü tarayıcınızdaki yerel kayıtları silerek karşılanır.</p>
+          <p>Yine de bir talebiniz varsa <a href="support.html#contact">iletişim kanalımızı</a> kullanabilirsiniz. Talebinizi yanıtlamak için kimlik doğrulaması isteyebiliriz.</p>
+
+          <h2 id="cocuklar">11. Çocuklar</h2>
+          <p>Vortexis, 13 yaşından küçük çocuklara yönelik değildir ve bilerek çocuklardan kişisel veri toplamaz. Bir çocuğun siteyi kullandığını fark ederseniz ve veri paylaştığını düşünüyorsanız bizimle iletişime geçin.</p>
+
+          <h2 id="degisiklikler">12. Değişiklikler</h2>
+          <p>Bu politikayı ürün, mevzuat veya altyapı değişikliklerine göre güncelleyebiliriz. Önemli değişikliklerde sayfanın üst kısmındaki “Son güncelleme” tarihini değiştiririz. Siteyi kullanmaya devam etmeniz, güncel politikayı kabul ettiğiniz anlamına gelir.</p>
+
+          <h2 id="iletisim">13. İletişim</h2>
+          <p>Gizlilik sorularınız için:</p>
+          <ul>
+            <li>E-posta: <a href="mailto:vortexisecure@gmail.com">vortexisecure@gmail.com</a></li>
+            <li>Destek: <a href="support.html#contact">Vortexis destek sayfası</a></li>
+            <li>GitHub: <a href="#" data-link="github" data-external>Vortexis deposu</a></li>
+          </ul>
+          <p>Bu politika Türkçe olarak hazırlanmıştır. Olası bir çeviri ile Türkçe metin arasında çelişki olması durumunda Türkçe metin geçerlidir.</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+            <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+            <span class="brand-word">VORTEXIS</span>
+          </a>
+          <p>Windows için sade, yerel ve gizlilik odaklı sistem bakımı. Bakım, izleme, hız ve güvenlik tek panelde.</p>
+          <div class="newsletter">
+            <p>Ürün güncellemeleri ve güvenlik notları için abone olun.</p>
+            <form class="newsletter-row" data-newsletter>
+              <input type="email" name="email" placeholder="E-posta adresiniz" aria-label="E-posta adresiniz" required>
+              <button class="btn btn--primary" type="submit">Abone ol</button>
+            </form>
+          </div>
+          <div class="footer-social">
+            <a href="#" data-link="github" data-external aria-label="GitHub"><svg class="icon"><use href="assets/icons.svg#github"></use></svg></a>
+            <a href="mailto:vortexisecure@gmail.com" aria-label="E-posta"><svg class="icon"><use href="assets/icons.svg#mail"></use></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Ürün</h4>
+          <a href="features.html">Özellikler</a>
+          <a href="scanner.html">Threat Lab</a>
+          <a href="download.html">İndir</a>
+          <a href="pricing.html">Planlar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kaynaklar</h4>
+          <a href="support.html">Destek</a>
+          <a href="support.html#faq">SSS</a>
+          <a href="download.html#release-notes">Sürüm notları</a>
+          <a href="#" data-link="github" data-external>GitHub</a>
+        </div>
+        <div class="footer-col">
+          <h4>Yasal</h4>
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html#contact">İletişim</a>
+          <a href="scanner.html#disclaimer">Tarama uyarısı</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Vortexis. Tüm hakları saklıdır.</span>
+        <div class="footer-legal">
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html">Destek</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

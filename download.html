@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İndir — Vortexis</title>
+  <meta name="description" content="Vortexis'i Windows 11 veya 10'a indirin. Sürüm notları, sistem gereksinimleri ve SHA-256 doğrulama.">
+  <link rel="canonical" href="https://vortexisecure.github.io/Vortexisecure/download.html">
+  <meta name="theme-color" content="#06070b">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/img/logo-256.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-256.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("vortexis.theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        document.documentElement.classList.add("js");
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="download">
+  <a class="sr-only" href="#main">İçeriğe geç</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+        <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+        <span class="brand-word">VORTEXIS</span>
+        <span class="brand-badge">WEB</span>
+      </a>
+      <nav class="nav-links" aria-label="Ana menü">
+        <a class="nav-link" data-nav="home" href="index.html">Ana Sayfa</a>
+        <a class="nav-link" data-nav="features" href="features.html">Özellikler</a>
+        <a class="nav-link" data-nav="scanner" href="scanner.html">Threat Lab</a>
+        <a class="nav-link" data-nav="download" href="download.html">İndir</a>
+        <a class="nav-link" data-nav="pricing" href="pricing.html">Planlar</a>
+        <a class="nav-link" data-nav="support" href="support.html">Destek</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-search-open aria-label="Sitede ara" title="Sitede ara (Ctrl+K)">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#search"></use></svg>
+        </button>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Açık temaya geç" title="Açık tema">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sun"></use></svg>
+        </button>
+        <a class="btn btn--ghost nav-login" data-auth="guest" href="login.html">Giriş</a>
+        <a class="btn btn--primary" data-auth="guest" href="download.html"><svg class="icon"><use href="assets/icons.svg#download"></use></svg> Ücretsiz indir</a>
+        <a class="nav-user" data-auth="user" href="account.html" hidden>
+          <span class="nav-avatar" data-auth-initials>V</span>
+          <span data-auth-name>Hesabım</span>
+        </a>
+        <button class="icon-btn mobile-toggle" type="button" data-menu-toggle aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <nav aria-label="Mobil menü">
+        <a class="mobile-link" data-nav="home" href="index.html">Ana Sayfa <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="features" href="features.html">Özellikler <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="scanner" href="scanner.html">Threat Lab <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="download" href="download.html">İndir <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="pricing" href="pricing.html">Planlar <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="support" href="support.html">Destek <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+      </nav>
+      <div class="mobile-actions">
+        <a class="btn btn--ghost" data-auth="guest" href="login.html">Giriş yap</a>
+        <a class="btn btn--ghost" data-auth="guest" href="register.html">Kayıt ol</a>
+        <a class="btn btn--primary" href="download.html">Ücretsiz indir</a>
+        <a class="btn btn--ghost" data-auth="user" href="account.html" hidden>Hesabım</a>
+        <button class="btn btn--ghost" type="button" data-auth="user" data-logout hidden>Çıkış yap</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="download-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Ana Sayfa</a><svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg><span>İndir</span></div>
+        <div class="page-hero-inner reveal">
+          <span class="section-kicker">Windows 11 &amp; 10 · x64</span>
+          <h1 class="page-hero-title">Vortexis'i <span class="text-gradient">indirin.</span></h1>
+          <p class="page-hero-lead">Tek EXE. Kurulum sihirbazı. Yerel hesap. İlk bakım birkaç dakika içinde. Kurulum dosyasını GitHub Releases üzerinden indirebilirsiniz.</p>
+          <div class="page-hero-actions">
+            <a class="btn btn--primary btn--lg" href="#" data-link="download"><svg class="icon"><use href="assets/icons.svg#download"></use></svg> Windows için indir</a>
+            <a class="btn btn--ghost btn--lg" href="download.html#requirements">Sistem gereksinimleri</a>
+          </div>
+        </div>
+
+        <div class="download-layout" style="margin-top:3rem">
+          <div class="reveal">
+            <div class="section-head" style="margin-bottom:1.5rem">
+              <span class="section-kicker">Kurulum</span>
+              <h2 class="section-title" style="font-size:clamp(1.7rem,3vw,2.5rem)">Üç adımda hazır.</h2>
+              <p class="section-desc">Kurulum dosyasını indirin, yönetici olarak çalıştırın ve hesabınızı oluşturun. Vortexis ilk açılışta sistem taraması için izin ister.</p>
+            </div>
+            <div class="steps" style="margin-top:0">
+              <div class="step">
+                <span class="step-num">1</span>
+                <h3>İndirin</h3>
+                <p><span data-release-file>VortexisSetup.exe</span> dosyasını indirin. Boyut: <span data-release-size>132,6 MB</span>.</p>
+              </div>
+              <div class="step">
+                <span class="step-num">2</span>
+                <h3>Çalıştırın</h3>
+                <p>Sağ tıklayıp “Yönetici olarak çalıştır” seçin veya kurulum sihirbazını takip edin.</p>
+              </div>
+              <div class="step">
+                <span class="step-num">3</span>
+                <h3>Hesabınızı oluşturun</h3>
+                <p>E-posta ve parola ile yerel hesap oluşturun. İsteğe bağlı doğrulama ile devam edin.</p>
+              </div>
+            </div>
+
+            <div id="requirements" style="margin-top:3rem">
+              <div class="section-head" style="margin-bottom:1.2rem">
+                <span class="section-kicker">Sistem gereksinimleri</span>
+                <h2 class="section-title" style="font-size:clamp(1.5rem,2.6vw,2.1rem)">Uyumluluk.</h2>
+              </div>
+              <table class="requirements-table">
+                <tr><th>İşletim sistemi</th><td><span data-release-os>Windows 10 21H2 / Windows 11</span></td></tr>
+                <tr><th>Mimari</th><td><span data-release-arch>x64</span></td></tr>
+                <tr><th>Disk alanı</th><td>~250 MB (kurulum ve geçici dosyalar)</td></tr>
+                <tr><th>Bellek</th><td>En az 4 GB önerilir</td></tr>
+                <tr><th>İzinler</th><td>Kurulum ve bakım için yönetici</td></tr>
+                <tr><th>İnternet</th><td>Yalnızca isteğe bağlı e-posta doğrulaması için</td></tr>
+              </table>
+            </div>
+
+            <div id="release-notes" style="margin-top:3rem">
+              <div class="section-head" style="margin-bottom:1.5rem">
+                <span class="section-kicker">Sürüm notları</span>
+                <h2 class="section-title" style="font-size:clamp(1.5rem,2.6vw,2.1rem)">Neler değişti?</h2>
+              </div>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <span class="timeline-dot"></span>
+                  <span class="timeline-date"><span data-release-date>2026-10-24</span> · <span data-release-version>v1.0.0</span></span>
+                  <h3>İlk kararlı sürüm</h3>
+                  <p>Tek tık bakım, canlı izleme, hız testi ve güvenlik denetimi. Yerel hesap, TR/EN arayüz ve tek EXE kurulum.</p>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-dot"></span>
+                  <span class="timeline-date">Gizlilik güncellemesi</span>
+                  <h3>Giriş kayıtları varsayılan olarak kapalı</h3>
+                  <p>Giriş kayıtları arayüzden kaldırıldı. Etkinleştirilirse dosya yalnızca yerel kullanıcı ve SYSTEM tarafından okunabilir.</p>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-dot"></span>
+                  <span class="timeline-date">Web</span>
+                  <h3>Threat Lab demo yayında</h3>
+                  <p>Hash, URL ve dosya ön incelemesi için simüle edilmiş tarama arayüzü. Gerçek analiz için masaüstü uygulaması önerilir.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:3rem">
+              <div class="section-head" style="margin-bottom:1.2rem">
+                <span class="section-kicker">Dosya doğrulama</span>
+                <h2 class="section-title" style="font-size:clamp(1.5rem,2.6vw,2.1rem)">SHA-256 ile kontrol edin.</h2>
+                <p class="section-desc">İndirdiğiniz dosyanın bütünlüğünü doğrulamak için PowerShell'de aşağıdaki komutu çalıştırın ve çıktıyı karşılaştırın.</p>
+              </div>
+              <div class="checksum">Get-FileHash .\VortexisSetup.exe -Algorithm SHA256</div>
+              <div class="checksum-row">
+                <button class="btn btn--sm btn--ghost" type="button" data-copy="Get-FileHash .\VortexisSetup.exe -Algorithm SHA256"><svg class="icon"><use href="assets/icons.svg#copy"></use></svg> Komutu kopyala</button>
+                <a class="btn btn--sm btn--ghost" href="#" data-link="releases" data-external><svg class="icon"><use href="assets/icons.svg#external-link"></use></svg> Tüm sürümler</a>
+              </div>
+            </div>
+          </div>
+
+          <aside class="download-card reveal" style="--delay:80ms">
+            <div class="download-card-head">
+              <img class="download-logo" src="assets/img/logo-256.png" alt="Vortexis" width="48" height="48">
+              <div>
+                <strong>Vortexis <span data-release-version>v1.0.0</span></strong>
+                <small><span data-release-channel>Kararlı</span> · <span data-release-date>2026-10-24</span></small>
+              </div>
+            </div>
+            <div class="download-meta">
+              <div><span>Sürüm</span><strong data-release-version>v1.0.0</strong></div>
+              <div><span>Boyut</span><strong data-release-size>132,6 MB</strong></div>
+              <div><span>Platform</span><strong>Windows x64</strong></div>
+              <div><span>Paket</span><strong>Tek EXE</strong></div>
+            </div>
+            <a class="btn btn--primary btn--lg" href="#" data-link="download"><svg class="icon"><use href="assets/icons.svg#download"></use></svg> İndirmeyi başlat</a>
+            <p class="download-note"><svg class="icon"><use href="assets/icons.svg#check-circle"></use></svg> Kurulum dosyası GitHub Releases üzerinden sunulur. Site deposunda büyük kurulum dosyası tutulmaz.</p>
+            <div class="checksum" id="sha-value" data-release-sha>DE396BF930687390D1393A30DF25D72515F3AC343E1D11F44F61272AFEF022F1</div>
+            <div class="checksum-row">
+              <button class="btn btn--sm btn--ghost btn--block" type="button" data-copy-target="#sha-value"><svg class="icon"><use href="assets/icons.svg#copy"></use></svg> SHA-256'yı kopyala</button>
+            </div>
+            <p class="download-note"><svg class="icon"><use href="assets/icons.svg#info"></use></svg> Yayına alırken <code>assets/js/config.js</code> içindeki sürüm ve hash bilgilerini güncelleyin.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head is-center reveal">
+          <span class="section-kicker">Kurulum notları</span>
+          <h2 class="section-title">Takıldığınızda.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">Kurulum sırasında SmartScreen uyarısı alıyorum.<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>Yeni yayınlanan imzasız kurulum dosyalarında SmartScreen uyarısı görülebilir. Dosyanın SHA-256 özetini yukarıdaki değerle karşılaştırın; eşleşiyorsa “Daha fazla bilgi” &gt; “Yine de çalıştır” ile devam edebilirsiniz.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">Yönetici izni neden gerekiyor?<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>Bakım işlemleri sistem klasörlerine, hizmetlere ve kayıt defterine erişebilir. Vortexis yalnızca gerekli işlemler için yükseltilmiş izin ister.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">Kurulum dosyası neden sitede yok?<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>Kurulum dosyası büyük olduğu için GitHub deposuna eklenmez. GitHub Releases üzerinden yayınlanır; böylece sürüm geçmişi ve indirme sayıları da takip edilebilir.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">Kaldırınca verilerim silinir mi?<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>Kaldırma işlemi uygulama dosyalarını siler. Yerel hesap ve ayarlar kullanıcı profilinde kalabilir; tamamen temizlemek için ilgili uygulama verisi klasörünü de silin.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+            <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+            <span class="brand-word">VORTEXIS</span>
+          </a>
+          <p>Windows için sade, yerel ve gizlilik odaklı sistem bakımı. Bakım, izleme, hız ve güvenlik tek panelde.</p>
+          <div class="newsletter">
+            <p>Ürün güncellemeleri ve güvenlik notları için abone olun.</p>
+            <form class="newsletter-row" data-newsletter>
+              <input type="email" name="email" placeholder="E-posta adresiniz" aria-label="E-posta adresiniz" required>
+              <button class="btn btn--primary" type="submit">Abone ol</button>
+            </form>
+          </div>
+          <div class="footer-social">
+            <a href="#" data-link="github" data-external aria-label="GitHub"><svg class="icon"><use href="assets/icons.svg#github"></use></svg></a>
+            <a href="mailto:vortexisecure@gmail.com" aria-label="E-posta"><svg class="icon"><use href="assets/icons.svg#mail"></use></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Ürün</h4>
+          <a href="features.html">Özellikler</a>
+          <a href="scanner.html">Threat Lab</a>
+          <a href="download.html">İndir</a>
+          <a href="pricing.html">Planlar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kaynaklar</h4>
+          <a href="support.html">Destek</a>
+          <a href="support.html#faq">SSS</a>
+          <a href="download.html#release-notes">Sürüm notları</a>
+          <a href="#" data-link="github" data-external>GitHub</a>
+        </div>
+        <div class="footer-col">
+          <h4>Yasal</h4>
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html#contact">İletişim</a>
+          <a href="scanner.html#disclaimer">Tarama uyarısı</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Vortexis. Tüm hakları saklıdır.</span>
+        <div class="footer-legal">
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html">Destek</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

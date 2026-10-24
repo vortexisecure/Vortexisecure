@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Threat Lab — Vortexis</title>
+  <meta name="description" content="Hash, URL veya dosya adıyla hızlı ön inceleme. 24 güvenlik motoru, topluluk sinyalleri ve risk skoru tek ekranda.">
+  <link rel="canonical" href="https://vortexisecure.github.io/Vortexisecure/scanner.html">
+  <meta name="theme-color" content="#06070b">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/img/logo-256.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-256.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("vortexis.theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        document.documentElement.classList.add("js");
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="scanner">
+  <a class="sr-only" href="#main">İçeriğe geç</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+        <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+        <span class="brand-word">VORTEXIS</span>
+        <span class="brand-badge">LAB</span>
+      </a>
+      <nav class="nav-links" aria-label="Ana menü">
+        <a class="nav-link" data-nav="home" href="index.html">Ana Sayfa</a>
+        <a class="nav-link" data-nav="features" href="features.html">Özellikler</a>
+        <a class="nav-link" data-nav="scanner" href="scanner.html">Threat Lab</a>
+        <a class="nav-link" data-nav="download" href="download.html">İndir</a>
+        <a class="nav-link" data-nav="pricing" href="pricing.html">Planlar</a>
+        <a class="nav-link" data-nav="support" href="support.html">Destek</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-search-open aria-label="Sitede ara" title="Sitede ara (Ctrl+K)">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#search"></use></svg>
+        </button>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Açık temaya geç" title="Açık tema">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sun"></use></svg>
+        </button>
+        <a class="btn btn--ghost nav-login" data-auth="guest" href="login.html">Giriş</a>
+        <a class="btn btn--primary" data-auth="guest" href="download.html"><svg class="icon"><use href="assets/icons.svg#download"></use></svg> Ücretsiz indir</a>
+        <a class="nav-user" data-auth="user" href="account.html" hidden>
+          <span class="nav-avatar" data-auth-initials>V</span>
+          <span data-auth-name>Hesabım</span>
+        </a>
+        <button class="icon-btn mobile-toggle" type="button" data-menu-toggle aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <nav aria-label="Mobil menü">
+        <a class="mobile-link" data-nav="home" href="index.html">Ana Sayfa <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="features" href="features.html">Özellikler <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="scanner" href="scanner.html">Threat Lab <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="download" href="download.html">İndir <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="pricing" href="pricing.html">Planlar <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="support" href="support.html">Destek <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+      </nav>
+      <div class="mobile-actions">
+        <a class="btn btn--ghost" data-auth="guest" href="login.html">Giriş yap</a>
+        <a class="btn btn--ghost" data-auth="guest" href="register.html">Kayıt ol</a>
+        <a class="btn btn--primary" href="download.html">Ücretsiz indir</a>
+        <a class="btn btn--ghost" data-auth="user" href="account.html" hidden>Hesabım</a>
+        <button class="btn btn--ghost" type="button" data-auth="user" data-logout hidden>Çıkış yap</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" class="scanner-page">
+    <div class="container">
+      <div class="scanner-hero reveal">
+        <div class="breadcrumb" style="justify-content:center"><a href="index.html">Ana Sayfa</a><svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg><span>Threat Lab</span></div>
+        <span class="section-kicker" style="justify-content:center">Vortexis Threat Lab</span>
+        <h1>Bir hash'in arkasında <span class="text-gradient">ne var?</span></h1>
+        <p>Hash, URL veya dosya seçerek hızlı bir ön inceleme başlatın. 24 güvenlik motorunun sinyallerini, topluluk verilerini ve risk skorunu tek ekranda görün.</p>
+      </div>
+
+      <div data-scanner-app>
+        <div class="scanner-shell">
+          <div class="scan-box reveal">
+            <form data-scan-form>
+              <div class="scan-tabs" role="tablist" aria-label="Tarama türü">
+                <button class="scan-tab is-active" type="button" data-scan-type="hash" role="tab" aria-selected="true">
+                  <svg class="icon"><use href="assets/icons.svg#hash"></use></svg> Hash
+                </button>
+                <button class="scan-tab" type="button" data-scan-type="url" role="tab" aria-selected="false">
+                  <svg class="icon"><use href="assets/icons.svg#link"></use></svg> URL
+                </button>
+                <button class="scan-tab" type="button" data-scan-type="file" role="tab" aria-selected="false">
+                  <svg class="icon"><use href="assets/icons.svg#file"></use></svg> Dosya
+                </button>
+              </div>
+
+              <div class="drop-zone" data-drop-zone tabindex="0" role="button" aria-label="Dosya seçmek için tıklayın veya sürükleyip bırakın" hidden>
+                <span class="drop-zone-icon"><svg class="icon"><use href="assets/icons.svg#file"></use></svg></span>
+                <strong>Dosyayı buraya sürükleyin</strong>
+                <small>veya seçmek için tıklayın · en fazla 100 MB</small>
+                <span class="file-name" data-file-name>Henüz dosya seçilmedi</span>
+                <input type="file" data-file-input class="sr-only" aria-label="Taranacak dosya">
+              </div>
+
+              <div class="scan-input-row" data-input-row>
+                <label class="sr-only" for="scan-input" data-scan-label>Hash veya URL</label>
+                <input id="scan-input" class="scan-input" type="text" data-scan-input placeholder="SHA-256, SHA-1 veya MD5 hash girin…" autocomplete="off" spellcheck="false">
+                <button class="btn btn--primary" type="submit" data-scan-submit>
+                  <svg class="icon"><use href="assets/icons.svg#search"></use></svg>
+                  Taramayı başlat
+                </button>
+              </div>
+
+              <p class="scan-hint"><svg class="icon"><use href="assets/icons.svg#info"></use></svg><span data-scan-hint>64 karakterlik SHA-256, 40 karakterlik SHA-1 veya 32 karakterlik MD5 desteklenir.</span></p>
+              <div class="sample-chips">
+                <span>Örnek:</span>
+                <button class="sample-chip" type="button" data-sample data-type="hash" data-query="275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f">EICAR test hash'i</button>
+                <button class="sample-chip" type="button" data-sample data-type="hash" data-query="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855">Temiz dosya hash'i</button>
+                <button class="sample-chip" type="button" data-sample data-type="url" data-query="http://free-robux-generator.example">Şüpheli URL</button>
+              </div>
+            </form>
+
+            <div class="scan-progress" data-scan-progress hidden>
+              <div class="progress-head">
+                <span class="progress-label" data-progress-label>Hazırlanıyor…</span>
+                <span class="progress-pct">demo</span>
+              </div>
+              <div class="progress-track"><div class="progress-bar" data-progress-bar></div></div>
+              <ol class="progress-steps" data-progress-steps></ol>
+            </div>
+          </div>
+
+          <div class="scan-result" data-scan-result hidden>
+            <div class="result-head">
+              <div class="result-title-wrap">
+                <div class="result-eyebrow">
+                  <span class="verdict-badge verdict-badge--clean" data-result-verdict><svg class="icon"><use href="assets/icons.svg#shield-check"></use></svg><span>Temiz</span></span>
+                  <span class="badge badge--amber" data-sample-badge hidden>Örnek rapor</span>
+                  <span class="badge">Demo veri</span>
+                </div>
+                <h2 class="result-title"><svg class="icon"><use href="assets/icons.svg#file"></use></svg><span data-result-name>bilinmeyen-dosya</span></h2>
+                <p class="result-sub"><span data-result-type>SHA-256 özeti</span> · <span data-result-size>—</span> · Son analiz: <span data-result-last>—</span></p>
+                <div class="result-ratio"><strong data-result-ratio>0 / 24</strong><span data-result-ratio-label>motor tespit etmedi</span></div>
+                <div class="result-actions">
+                  <button class="btn btn--sm btn--ghost" type="button" data-copy-result><svg class="icon"><use href="assets/icons.svg#copy"></use></svg> Hash'i kopyala</button>
+                  <button class="btn btn--sm btn--ghost" type="button" data-share-result><svg class="icon"><use href="assets/icons.svg#link"></use></svg> Bağlantıyı kopyala</button>
+                  <button class="btn btn--sm btn--ghost" type="button" data-download-report><svg class="icon"><use href="assets/icons.svg#download"></use></svg> JSON raporu</button>
+                  <button class="btn btn--sm btn--ghost" type="button" data-new-scan><svg class="icon"><use href="assets/icons.svg#refresh"></use></svg> Yeni tarama</button>
+                </div>
+              </div>
+              <div class="risk-gauge" data-risk-gauge style="--score:6;--gauge-color:var(--green)">
+                <div class="risk-gauge-inner"><strong data-risk-score>6</strong><span data-risk-label>Düşük risk</span></div>
+              </div>
+            </div>
+
+            <div class="result-grid">
+              <div class="result-main">
+                <section class="result-card">
+                  <h3><svg class="icon"><use href="assets/icons.svg#layers"></use></svg> Dosya ayrıntıları</h3>
+                  <div class="meta-grid">
+                    <div class="meta-item"><span class="meta-label">Dosya adı</span><span class="meta-value" data-result-name>bilinmeyen-dosya</span></div>
+                    <div class="meta-item"><span class="meta-label">Tür</span><span class="meta-value" data-result-type>SHA-256 özeti</span></div>
+                    <div class="meta-item"><span class="meta-label">Boyut</span><span class="meta-value" data-result-size>—</span></div>
+                    <div class="meta-item"><span class="meta-label">İlk görülme</span><span class="meta-value" data-result-first>—</span></div>
+                    <div class="meta-item"><span class="meta-label">Son analiz</span><span class="meta-value" data-result-last>—</span></div>
+                    <div class="meta-item"><span class="meta-label">İmza</span><span class="meta-value" data-result-signature>—</span></div>
+                  </div>
+                  <div class="hash-value"><code data-result-hash>—</code><button type="button" data-copy-result aria-label="Hash'i kopyala"><svg class="icon"><use href="assets/icons.svg#copy"></use></svg></button></div>
+                  <div class="tags" data-result-tags></div>
+                </section>
+
+                <section class="result-card">
+                  <h3><svg class="icon"><use href="assets/icons.svg#shield"></use></svg> Güvenlik motorları</h3>
+                  <div class="vendor-toolbar">
+                    <div class="faq-search">
+                      <svg class="icon"><use href="assets/icons.svg#search"></use></svg>
+                      <input type="search" data-vendor-search placeholder="Motor veya sonuç ara…" aria-label="Motor veya sonuç ara">
+                    </div>
+                    <label class="checkbox"><input type="checkbox" data-only-detections> Sadece tespitler</label>
+                    <span class="vendor-count"><span data-visible-vendors>24 / 24</span> motor</span>
+                  </div>
+                  <div class="vendor-table-wrap">
+                    <table class="vendor-table">
+                      <thead><tr><th>Motor</th><th>Sonuç</th><th>Durum</th></tr></thead>
+                      <tbody data-vendor-body></tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+
+              <aside class="result-side">
+                <section class="side-card">
+                  <h3><svg class="icon"><use href="assets/icons.svg#users"></use></svg> Topluluk</h3>
+                  <div data-community></div>
+                  <p class="auth-note" style="text-align:left;margin-top:0.7rem">Topluluk oyları demo amaçlıdır; gerçek kullanıcı verisi içermez.</p>
+                </section>
+                <section class="side-card">
+                  <h3><svg class="icon"><use href="assets/icons.svg#info"></use></svg> Rapor özeti</h3>
+                  <ul class="side-list">
+                    <li><svg class="icon"><use href="assets/icons.svg#check-circle"></use></svg><span><strong data-detection-count>0</strong> motor tespit etti</span></li>
+                    <li><svg class="icon"><use href="assets/icons.svg#layers"></use></svg><span><strong data-vendor-count>24</strong> motor sorgulandı</span></li>
+                    <li><svg class="icon"><use href="assets/icons.svg#clock"></use></svg><span>Sonuçlar deterministik demo verisidir.</span></li>
+                  </ul>
+                </section>
+                <section class="side-card">
+                  <h3><svg class="icon"><use href="assets/icons.svg#lock"></use></svg> Güvenli tarama</h3>
+                  <ul class="side-list">
+                    <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg><span>Dosyanız tarayıcıdan ayrılmaz.</span></li>
+                    <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg><span>Hash yerel olarak hesaplanır.</span></li>
+                    <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg><span>Gerçek analiz için masaüstü uygulamasını kullanın.</span></li>
+                  </ul>
+                </section>
+              </aside>
+            </div>
+          </div>
+        </div>
+
+        <div class="recent-scans reveal">
+          <div class="recent-scans-head">
+            <h2>Son taramalar</h2>
+            <span class="badge">Yalnızca bu tarayıcıda</span>
+          </div>
+          <div class="recent-table-wrap">
+            <table class="recent-table">
+              <thead><tr><th>Girdi</th><th>Sonuç</th><th>Tespit</th><th>Tarih</th><th></th></tr></thead>
+              <tbody data-recent-body></tbody>
+            </table>
+            <div class="account-empty" data-recent-empty>
+              <svg class="icon"><use href="assets/icons.svg#scan"></use></svg>
+              Henüz tarama yok. Yukarıdan bir hash, URL veya dosya ile başlayın.
+            </div>
+          </div>
+        </div>
+
+        <div class="scanner-note" id="disclaimer">
+          <svg class="icon"><use href="assets/icons.svg#alert-triangle"></use></svg>
+          <span><strong>Demo uyarısı:</strong> Threat Lab gerçek bir antivirüs motoru değildir. Sonuçlar arayüz deneyimi için simüle edilir; güvenlik kararlarınızı yalnızca bu rapora dayandırmayın. Gerçek dosya analizi için Vortexis masaüstü uygulamasını veya yetkili bir tarama servisini kullanın.</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head is-center reveal">
+          <span class="section-kicker">Nasıl çalışır?</span>
+          <h2 class="section-title">Üç adımda ön inceleme.</h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <span class="step-num">1</span>
+            <h3>Girdiyi seçin</h3>
+            <p>Hash, URL veya dosya. Dosya seçerseniz SHA-256 özeti tarayıcınızda hesaplanır.</p>
+          </div>
+          <div class="step reveal" style="--delay:60ms">
+            <span class="step-num">2</span>
+            <h3>Motorları sorgulayın</h3>
+            <p>Demo ortamında 24 motorun sinyali deterministik olarak üretilir; gerçek API bağlantısı yoktur.</p>
+          </div>
+          <div class="step reveal" style="--delay:120ms">
+            <span class="step-num">3</span>
+            <h3>Raporu inceleyin</h3>
+            <p>Risk skoru, tespit sayısı, topluluk sinyalleri ve etiketleri tek ekranda görün. JSON olarak indirin.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+            <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+            <span class="brand-word">VORTEXIS</span>
+          </a>
+          <p>Windows için sade, yerel ve gizlilik odaklı sistem bakımı. Bakım, izleme, hız ve güvenlik tek panelde.</p>
+          <div class="newsletter">
+            <p>Ürün güncellemeleri ve güvenlik notları için abone olun.</p>
+            <form class="newsletter-row" data-newsletter>
+              <input type="email" name="email" placeholder="E-posta adresiniz" aria-label="E-posta adresiniz" required>
+              <button class="btn btn--primary" type="submit">Abone ol</button>
+            </form>
+          </div>
+          <div class="footer-social">
+            <a href="#" data-link="github" data-external aria-label="GitHub"><svg class="icon"><use href="assets/icons.svg#github"></use></svg></a>
+            <a href="mailto:vortexisecure@gmail.com" aria-label="E-posta"><svg class="icon"><use href="assets/icons.svg#mail"></use></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Ürün</h4>
+          <a href="features.html">Özellikler</a>
+          <a href="scanner.html">Threat Lab</a>
+          <a href="download.html">İndir</a>
+          <a href="pricing.html">Planlar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kaynaklar</h4>
+          <a href="support.html">Destek</a>
+          <a href="support.html#faq">SSS</a>
+          <a href="download.html#release-notes">Sürüm notları</a>
+          <a href="#" data-link="github" data-external>GitHub</a>
+        </div>
+        <div class="footer-col">
+          <h4>Yasal</h4>
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html#contact">İletişim</a>
+          <a href="scanner.html#disclaimer">Tarama uyarısı</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Vortexis. Tüm hakları saklıdır.</span>
+        <div class="footer-legal">
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html">Destek</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/scanner.js"></script>
+</body>
+</html>

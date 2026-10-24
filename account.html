@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hesabım — Vortexis</title>
+  <meta name="description" content="Vortexis hesabınızı, profilinizi ve tarama geçmişinizi yönetin.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#06070b">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/img/logo-256.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-256.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("vortexis.theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        document.documentElement.classList.add("js");
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="account" data-account-page>
+  <a class="sr-only" href="#main">İçeriğe geç</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+        <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+        <span class="brand-word">VORTEXIS</span>
+        <span class="brand-badge">WEB</span>
+      </a>
+      <nav class="nav-links" aria-label="Ana menü">
+        <a class="nav-link" data-nav="home" href="index.html">Ana Sayfa</a>
+        <a class="nav-link" data-nav="features" href="features.html">Özellikler</a>
+        <a class="nav-link" data-nav="scanner" href="scanner.html">Threat Lab</a>
+        <a class="nav-link" data-nav="download" href="download.html">İndir</a>
+        <a class="nav-link" data-nav="pricing" href="pricing.html">Planlar</a>
+        <a class="nav-link" data-nav="support" href="support.html">Destek</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-search-open aria-label="Sitede ara" title="Sitede ara (Ctrl+K)">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#search"></use></svg>
+        </button>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Açık temaya geç" title="Açık tema">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sun"></use></svg>
+        </button>
+        <a class="nav-user" data-auth="user" href="account.html">
+          <span class="nav-avatar" data-auth-initials>V</span>
+          <span data-auth-name>Hesabım</span>
+        </a>
+        <button class="icon-btn mobile-toggle" type="button" data-menu-toggle aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <nav aria-label="Mobil menü">
+        <a class="mobile-link" data-nav="home" href="index.html">Ana Sayfa <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="features" href="features.html">Özellikler <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="scanner" href="scanner.html">Threat Lab <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="download" href="download.html">İndir <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="pricing" href="pricing.html">Planlar <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="support" href="support.html">Destek <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" href="account.html">Hesabım <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+      </nav>
+      <div class="mobile-actions">
+        <a class="btn btn--primary" href="download.html">Ücretsiz indir</a>
+        <button class="btn btn--ghost" type="button" data-logout>Çıkış yap</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" class="account-page">
+    <div class="container">
+      <div class="account-layout">
+        <aside class="account-sidebar">
+          <div class="profile-card">
+            <span class="profile-avatar" data-account-initials>V</span>
+            <div class="profile-name" data-account-name>Vortexis Demo</div>
+            <div class="profile-email">
+              <span data-account-email>vortexisecure@gmail.com</span>
+              <button class="btn btn--xs btn--ghost" type="button" data-copy-email aria-label="E-postayı kopyala" title="E-postayı kopyala" style="margin-left:.25rem;vertical-align:middle"><svg class="icon"><use href="assets/icons.svg#copy"></use></svg></button>
+            </div>
+            <div class="profile-plan">
+              <span class="badge badge--accent"><svg class="icon"><use href="assets/icons.svg#layers"></use></svg><span data-account-plan>Desktop</span></span>
+              <span class="badge badge--green" data-account-demo hidden>Demo</span>
+            </div>
+            <div class="profile-stats">
+              <div><strong data-stat-scans>0</strong><span>Tarama</span></div>
+              <div><strong data-stat-clean>0</strong><span>Temiz</span></div>
+              <div><strong data-stat-threats>0</strong><span>Riskli</span></div>
+            </div>
+          </div>
+
+          <nav class="account-nav" aria-label="Hesap menüsü">
+            <a href="#overview" class="is-active"><svg class="icon"><use href="assets/icons.svg#activity"></use></svg> Genel bakış</a>
+            <a href="#profile"><svg class="icon"><use href="assets/icons.svg#user"></use></svg> Profil</a>
+            <a href="#security"><svg class="icon"><use href="assets/icons.svg#key"></use></svg> Güvenlik</a>
+            <a href="#scans"><svg class="icon"><use href="assets/icons.svg#scan"></use></svg> Tarama geçmişi</a>
+            <a href="#plan"><svg class="icon"><use href="assets/icons.svg#layers"></use></svg> Plan</a>
+            <a href="#danger"><svg class="icon"><use href="assets/icons.svg#alert-triangle"></use></svg> Hesabı sil</a>
+            <button type="button" data-logout><svg class="icon"><use href="assets/icons.svg#log-out"></use></svg> Çıkış yap</button>
+          </nav>
+        </aside>
+
+        <div class="account-main">
+          <section class="account-panel" id="overview">
+            <div class="panel-head">
+              <div>
+                <h2>Genel bakış</h2>
+                <p>Hesabınızın kısa özeti ve son etkinlik.</p>
+              </div>
+              <span class="badge badge--green"><svg class="icon"><use href="assets/icons.svg#shield-check"></use></svg> Yerel oturum</span>
+            </div>
+            <div class="account-stats">
+              <div class="stat-card"><span>Toplam tarama</span><strong data-stat-scans>0</strong></div>
+              <div class="stat-card"><span>Temiz sonuç</span><strong data-stat-clean>0</strong></div>
+              <div class="stat-card"><span>Riskli / şüpheli</span><strong data-stat-threats>0</strong></div>
+            </div>
+            <div class="meta-grid" style="margin-top:1rem">
+              <div class="meta-item"><span class="meta-label">Üyelik başlangıcı</span><span class="meta-value" data-account-since>—</span></div>
+              <div class="meta-item"><span class="meta-label">Hesap kimliği</span><span class="meta-value meta-value--mono" data-account-id>—</span></div>
+              <div class="meta-item"><span class="meta-label">Plan</span><span class="meta-value" data-account-plan>Desktop</span></div>
+            </div>
+          </section>
+
+          <section class="account-panel" id="profile">
+            <div class="panel-head">
+              <div>
+                <h2>Profil</h2>
+                <p>Görünen adınızı güncelleyin. E-posta adresi bu demo sürümünde değiştirilemez.</p>
+              </div>
+            </div>
+            <form data-profile-form>
+              <div class="auth-error" data-auth-error hidden></div>
+              <div class="field">
+                <label for="profile-name">Ad soyad</label>
+                <div class="input-wrap">
+                  <svg class="icon"><use href="assets/icons.svg#user"></use></svg>
+                  <input class="input" id="profile-name" name="name" type="text" autocomplete="name" required>
+                </div>
+              </div>
+              <div class="field">
+                <label for="profile-email">E-posta</label>
+                <div class="input-wrap">
+                  <svg class="icon"><use href="assets/icons.svg#mail"></use></svg>
+                  <input class="input" id="profile-email" type="email" data-profile-email disabled>
+                </div>
+              </div>
+              <button class="btn btn--primary" type="submit"><svg class="icon"><use href="assets/icons.svg#check"></use></svg> Profili kaydet</button>
+            </form>
+          </section>
+
+          <section class="account-panel" id="security">
+            <div class="panel-head">
+              <div>
+                <h2>Güvenlik</h2>
+                <p>Parolanızı değiştirin. Yeni parola en az 8 karakter olmalı.</p>
+              </div>
+              <span class="badge"><svg class="icon"><use href="assets/icons.svg#lock"></use></svg> PBKDF2</span>
+            </div>
+            <form data-password-form>
+              <div class="auth-error" data-auth-error hidden></div>
+              <div class="field">
+                <label for="current-password">Mevcut parola</label>
+                <div class="input-wrap">
+                  <svg class="icon"><use href="assets/icons.svg#key"></use></svg>
+                  <input class="input has-toggle" id="current-password" name="current" type="password" autocomplete="current-password" required>
+                  <button class="password-toggle" type="button" data-password-toggle data-target="#current-password" aria-label="Parolayı göster"><svg class="icon"><use href="assets/icons.svg#eye"></use></svg></button>
+                </div>
+              </div>
+              <div class="field">
+                <label for="new-password">Yeni parola</label>
+                <div class="input-wrap">
+                  <svg class="icon"><use href="assets/icons.svg#lock"></use></svg>
+                  <input class="input has-toggle" id="new-password" name="new" type="password" autocomplete="new-password" required>
+                  <button class="password-toggle" type="button" data-password-toggle data-target="#new-password" aria-label="Parolayı göster"><svg class="icon"><use href="assets/icons.svg#eye"></use></svg></button>
+                </div>
+              </div>
+              <div class="field">
+                <label for="confirm-password">Yeni parola (tekrar)</label>
+                <div class="input-wrap">
+                  <svg class="icon"><use href="assets/icons.svg#lock"></use></svg>
+                  <input class="input has-toggle" id="confirm-password" name="confirm" type="password" autocomplete="new-password" required>
+                  <button class="password-toggle" type="button" data-password-toggle data-target="#confirm-password" aria-label="Parolayı göster"><svg class="icon"><use href="assets/icons.svg#eye"></use></svg></button>
+                </div>
+              </div>
+              <button class="btn btn--primary" type="submit"><svg class="icon"><use href="assets/icons.svg#check"></use></svg> Parolayı güncelle</button>
+            </form>
+          </section>
+
+          <section class="account-panel" id="scans">
+            <div class="panel-head">
+              <div>
+                <h2>Tarama geçmişi</h2>
+                <p>Threat Lab'da yaptığınız son taramalar. Veriler yalnızca bu tarayıcıda saklanır.</p>
+              </div>
+              <button class="btn btn--sm btn--ghost" type="button" data-clear-scans><svg class="icon"><use href="assets/icons.svg#trash"></use></svg> Geçmişi temizle</button>
+            </div>
+            <div class="scan-history">
+              <table>
+                <thead><tr><th>Girdi</th><th>Sonuç</th><th>Tespit</th><th>Tarih</th></tr></thead>
+                <tbody data-account-scans></tbody>
+              </table>
+              <div class="account-empty" data-account-scans-empty>
+                <svg class="icon"><use href="assets/icons.svg#scan"></use></svg>
+                Henüz tarama yok. <a href="scanner.html" style="color:var(--accent-2)">Threat Lab'ı açın</a> ve ilk taramanızı başlatın.
+              </div>
+            </div>
+          </section>
+
+          <section class="account-panel" id="plan">
+            <div class="panel-head">
+              <div>
+                <h2>Plan</h2>
+                <p>Mevcut planınız ve erken erişim fırsatları.</p>
+              </div>
+              <span class="badge badge--accent" data-account-plan>Desktop</span>
+            </div>
+            <div class="notice">
+              <svg class="icon"><use href="assets/icons.svg#info"></use></svg>
+              <span>Desktop planı şu an ücretsizdir. Pro ve Kurumsal planlar geliştirme aşamasında. <a href="pricing.html" style="color:var(--accent-2)">Planları karşılaştırın</a>.</span>
+            </div>
+          </section>
+
+          <section class="account-panel danger-zone" id="danger">
+            <h3>Hesabı sil</h3>
+            <p>Hesabınızı ve bu tarayıcıdaki oturumunuzu kalıcı olarak silin. Tarama geçmişi de silinir. Bu işlem geri alınamaz.</p>
+            <button class="btn btn--danger" type="button" data-delete-account><svg class="icon"><use href="assets/icons.svg#trash"></use></svg> Hesabımı sil</button>
+            <p class="auth-note" data-account-demo hidden style="text-align:left;margin-top:.7rem">Demo hesabı silinemez. Kendi hesabınızı oluşturarak devam edebilirsiniz.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+            <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+            <span class="brand-word">VORTEXIS</span>
+          </a>
+          <p>Windows için sade, yerel ve gizlilik odaklı sistem bakımı. Bakım, izleme, hız ve güvenlik tek panelde.</p>
+          <div class="newsletter">
+            <p>Ürün güncellemeleri ve güvenlik notları için abone olun.</p>
+            <form class="newsletter-row" data-newsletter>
+              <input type="email" name="email" placeholder="E-posta adresiniz" aria-label="E-posta adresiniz" required>
+              <button class="btn btn--primary" type="submit">Abone ol</button>
+            </form>
+          </div>
+          <div class="footer-social">
+            <a href="#" data-link="github" data-external aria-label="GitHub"><svg class="icon"><use href="assets/icons.svg#github"></use></svg></a>
+            <a href="mailto:vortexisecure@gmail.com" aria-label="E-posta"><svg class="icon"><use href="assets/icons.svg#mail"></use></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Ürün</h4>
+          <a href="features.html">Özellikler</a>
+          <a href="scanner.html">Threat Lab</a>
+          <a href="download.html">İndir</a>
+          <a href="pricing.html">Planlar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kaynaklar</h4>
+          <a href="support.html">Destek</a>
+          <a href="support.html#faq">SSS</a>
+          <a href="download.html#release-notes">Sürüm notları</a>
+          <a href="#" data-link="github" data-external>GitHub</a>
+        </div>
+        <div class="footer-col">
+          <h4>Yasal</h4>
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html#contact">İletişim</a>
+          <a href="scanner.html#disclaimer">Tarama uyarısı</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Vortexis. Tüm hakları saklıdır.</span>
+        <div class="footer-legal">
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html">Destek</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

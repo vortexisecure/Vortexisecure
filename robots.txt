@@ -1,0 +1,11 @@
+# Vortexis web sitesi
+# Yayına almadan önce alan adını kendi GitHub Pages adresinizle değiştirin.
+User-agent: *
+Allow: /
+
+Disallow: /account.html
+Disallow: /login.html
+Disallow: /register.html
+Disallow: /404.html
+
+Sitemap: https://vortexisecure.github.io/Vortexisecure/sitemap.xml

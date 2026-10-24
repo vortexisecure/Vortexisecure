@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vortexis — Windows için akıllı sistem bakımı</title>
+  <meta name="description" content="Vortexis; bakım, canlı izleme, hız testi ve güvenlik kontrollerini tek bir sade arayüzde birleştirir. Windows 11 ve 10 için tek EXE.">
+  <link rel="canonical" href="https://vortexisecure.github.io/Vortexisecure/">
+  <meta name="theme-color" content="#06070b">
+  <meta property="og:title" content="Vortexis — Windows için akıllı sistem bakımı">
+  <meta property="og:description" content="Bakım, izleme, hız testi ve güvenlik. Tek EXE, yerel hesap, sade arayüz.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://vortexisecure.github.io/Vortexisecure/assets/img/dashboard-dark.png">
+  <meta property="og:url" content="https://vortexisecure.github.io/Vortexisecure/">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/img/logo-256.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-256.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("vortexis.theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        document.documentElement.classList.add("js");
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="home">
+  <a class="sr-only" href="#main">İçeriğe geç</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+        <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+        <span class="brand-word">VORTEXIS</span>
+        <span class="brand-badge">WEB</span>
+      </a>
+      <nav class="nav-links" aria-label="Ana menü">
+        <a class="nav-link" data-nav="home" href="index.html">Ana Sayfa</a>
+        <a class="nav-link" data-nav="features" href="features.html">Özellikler</a>
+        <a class="nav-link" data-nav="scanner" href="scanner.html">Threat Lab</a>
+        <a class="nav-link" data-nav="download" href="download.html">İndir</a>
+        <a class="nav-link" data-nav="pricing" href="pricing.html">Planlar</a>
+        <a class="nav-link" data-nav="support" href="support.html">Destek</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-search-open aria-label="Sitede ara" title="Sitede ara (Ctrl+K)">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#search"></use></svg>
+        </button>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Açık temaya geç" title="Açık tema">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sun"></use></svg>
+        </button>
+        <a class="btn btn--ghost nav-login" data-auth="guest" href="login.html">Giriş</a>
+        <a class="btn btn--primary" data-auth="guest" href="download.html">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg>
+          Ücretsiz indir
+        </a>
+        <a class="nav-user" data-auth="user" href="account.html" hidden>
+          <span class="nav-avatar" data-auth-initials>V</span>
+          <span data-auth-name>Hesabım</span>
+        </a>
+        <button class="icon-btn mobile-toggle" type="button" data-menu-toggle aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <nav aria-label="Mobil menü">
+        <a class="mobile-link" data-nav="home" href="index.html">Ana Sayfa <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="features" href="features.html">Özellikler <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="scanner" href="scanner.html">Threat Lab <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="download" href="download.html">İndir <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="pricing" href="pricing.html">Planlar <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="support" href="support.html">Destek <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+      </nav>
+      <div class="mobile-actions">
+        <a class="btn btn--ghost" data-auth="guest" href="login.html">Giriş yap</a>
+        <a class="btn btn--ghost" data-auth="guest" href="register.html">Kayıt ol</a>
+        <a class="btn btn--primary" href="download.html">Ücretsiz indir</a>
+        <a class="btn btn--ghost" data-auth="user" href="account.html" hidden>Hesabım</a>
+        <button class="btn btn--ghost" type="button" data-auth="user" data-logout hidden>Çıkış yap</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Windows 11 &amp; 10 için akıllı bakım
+          </div>
+          <h1 class="hero-title">Bilgisayarınızın <span class="grad">görünmeyen yükünü</span> ortadan kaldırın.</h1>
+          <p class="hero-lead">
+            Vortexis; bakım, canlı izleme, hız testi ve güvenlik kontrollerini tek bir sade arayüzde birleştirir.
+            Tek EXE, yerel hesap ve bulut zorunluluğu olmadan.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn--primary btn--lg" href="download.html">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg>
+              Ücretsiz indir
+            </a>
+            <a class="btn btn--ghost btn--lg" href="scanner.html">
+              <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#scan"></use></svg>
+              Threat Lab'ı keşfet
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><strong>1 EXE</strong><span>Kurulum dosyası</span></div>
+            <div class="hero-stat"><strong>4 modül</strong><span>Tek arayüzde</span></div>
+            <div class="hero-stat"><strong>TR / EN</strong><span>Dil desteği</span></div>
+            <div class="hero-stat"><strong>0 bulut</strong><span>Zorunlu değil</span></div>
+          </div>
+          <div class="hero-trust">
+            <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Windows Defender uyumlu</span>
+            <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Yerel hesap</span>
+            <span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> DPAPI korumalı</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="app-window">
+            <div class="app-window-bar">
+              <span class="window-dots"><i></i><i></i><i></i></span>
+              <span class="app-window-title">Vortexis — Sistem Paneli</span>
+              <span class="window-dots" style="opacity:0"><i></i><i></i><i></i></span>
+            </div>
+            <img src="assets/img/dashboard-dark.png" data-dark-src="assets/img/dashboard-dark.png" data-light-src="assets/img/dashboard-light.png" alt="Vortexis sistem paneli ekran görüntüsü" width="1440" height="960" loading="eager" fetchpriority="high">
+          </div>
+          <div class="float-card float-card--protection">
+            <span class="float-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield-check"></use></svg></span>
+            <span><strong>Koruma aktif</strong><small>Defender · güncel</small></span>
+            <span class="mini-spark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          </div>
+          <div class="float-card float-card--speed">
+            <span class="float-icon" style="background:var(--cyan-soft);color:var(--cyan)"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#gauge"></use></svg></span>
+            <span><strong>842 Mbps</strong><small>İndirme hızı</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust strip -->
+    <div class="trust-strip">
+      <div class="container trust-strip-inner">
+        <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#monitor"></use></svg> Windows 11 &amp; 10</div>
+        <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg> Tek EXE kurulum</div>
+        <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#lock"></use></svg> Yerel hesap</div>
+        <div class="trust-item"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield"></use></svg> Defender uyumlu</div>
+      </div>
+    </div>
+
+    <!-- Features bento -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">Tek panel, dört disiplin</span>
+          <h2 class="section-title">Bakımı, izlemeyi ve güvenliği aynı yerde tutun.</h2>
+          <p class="section-desc">Vortexis, Windows'un dağınık araçlarını tek bir tutarlı arayüzde toplar. Her modül bağımsız çalışır; birlikte kullanıldığında sistemin tam resmini verir.</p>
+        </div>
+
+        <div class="bento">
+          <article class="bento-card bento-card--large reveal" style="--delay:0ms">
+            <span class="bento-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#zap"></use></svg></span>
+            <h3>Tek tık bakım</h3>
+            <p>Geçici dosyalar, bozuk kayıtlar, gereksiz başlangıç öğeleri ve eski güncelleme kalıntılarını güvenle temizleyin. Hızlı, dengeli veya derin profil seçin.</p>
+            <div class="bento-visual">
+              <img src="assets/img/oneclick-comparison.png" alt="Vortexis tek tık bakım öncesi ve sonrası" loading="lazy">
+            </div>
+          </article>
+
+          <article class="bento-card bento-card--medium reveal" style="--delay:60ms">
+            <span class="bento-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#activity"></use></svg></span>
+            <h3>Canlı sistem izleme</h3>
+            <p>CPU, RAM, disk, sıcaklık ve ağ trafiğini tek ekranda görün. Anomalileri fark edin, darboğazları erkenden yakalayın.</p>
+            <div class="bento-visual">
+              <img src="assets/img/diagnostics-dark.png" data-dark-src="assets/img/diagnostics-dark.png" data-light-src="assets/img/diagnostics-light.png" alt="Vortexis tanılama ekranı" loading="lazy">
+            </div>
+          </article>
+
+          <article class="bento-card bento-card--third reveal" style="--delay:0ms">
+            <span class="bento-icon" style="background:var(--cyan-soft);color:var(--cyan);border-color:rgba(34,211,238,.18)"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#gauge"></use></svg></span>
+            <h3>Hız testi</h3>
+            <p>İndirme, yükleme, gecikme ve jitter değerlerini saniyeler içinde ölçün.</p>
+            <ul class="bento-list">
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Tek tık ölçüm</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Geçmiş karşılaştırma</li>
+            </ul>
+          </article>
+
+          <article class="bento-card bento-card--third reveal" style="--delay:60ms">
+            <span class="bento-icon" style="background:var(--green-soft);color:var(--green);border-color:rgba(52,211,153,.18)"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield"></use></svg></span>
+            <h3>Güvenlik taraması</h3>
+            <p>Defender durumu, şüpheli dosyalar ve karantina kayıtlarını tek yerden denetleyin.</p>
+            <ul class="bento-list">
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Defender durumu</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Karantina görünümü</li>
+            </ul>
+          </article>
+
+          <article class="bento-card bento-card--third reveal" style="--delay:120ms">
+            <span class="bento-icon" style="background:var(--violet-soft);color:var(--violet);border-color:rgba(139,92,246,.18)"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#hard-drive"></use></svg></span>
+            <h3>Disk analizi</h3>
+            <p>Büyük dosyaları, yinelenenleri ve boş klasörleri bulun; alanı bilinçli kullanın.</p>
+            <ul class="bento-list">
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Büyük dosyalar</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Yinelenenler</li>
+            </ul>
+          </article>
+
+          <article class="bento-card bento-card--half reveal" style="--delay:0ms">
+            <span class="bento-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#play"></use></svg></span>
+            <h3>Oyun modu</h3>
+            <p>Oyun sırasında arka plan süreçlerini ve bildirimleri duraklatın. Kare düşüşlerini azaltın, odağınızı koruyun.</p>
+            <div class="bento-visual">
+              <img src="assets/img/gamemode-dark.png" alt="Vortexis oyun modu ekranı" loading="lazy">
+            </div>
+          </article>
+
+          <article class="bento-card bento-card--half bento-card--accent reveal" style="--delay:60ms">
+            <span class="bento-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#lock"></use></svg></span>
+            <h3>Gizlilik odaklı tasarım</h3>
+            <p>Hesabınız ve ayarlarınız yerelde kalır. Bulut zorunluluğu yok; giriş kayıtları varsayılan olarak kapalı ve erişimi kısıtlı.</p>
+            <ul class="bento-list">
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> Yerel hesap ve oturum</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> DPAPI korumalı gönderici</li>
+              <li><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#check"></use></svg> İsteğe bağlı e-posta doğrulama</li>
+            </ul>
+            <a class="link-arrow" href="features.html#privacy">Gizlilik yaklaşımını okuyun <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase -->
+    <section class="section section--alt" id="showcase">
+      <div class="container showcase" data-tabs>
+        <div class="showcase-copy reveal">
+          <span class="section-kicker">Bir bakışta Vortexis</span>
+          <h2 class="section-title">Sade görünür. Derinlemesine çalışır.</h2>
+          <p class="section-desc">Her ekran, tek bir işi net biçimde yapmak için tasarlandı. Sekmeler arasında gezinin; gerçek uygulama arayüzünü inceleyin.</p>
+
+          <div class="showcase-tabs" role="tablist" aria-label="Vortexis modülleri">
+            <button class="showcase-tab is-active" type="button" data-tab="maintenance" role="tab" aria-selected="true">
+              <span class="showcase-tab-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#zap"></use></svg></span>
+              <span><strong>Bakım</strong><small>Hızlı, dengeli ve derin profiller</small></span>
+            </button>
+            <button class="showcase-tab" type="button" data-tab="monitor" role="tab" aria-selected="false">
+              <span class="showcase-tab-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#activity"></use></svg></span>
+              <span><strong>İzleme</strong><small>CPU, RAM, sıcaklık ve disk</small></span>
+            </button>
+            <button class="showcase-tab" type="button" data-tab="network" role="tab" aria-selected="false">
+              <span class="showcase-tab-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#wifi"></use></svg></span>
+              <span><strong>Ağ ve hız</strong><small>Gecikme, jitter ve bant genişliği</small></span>
+            </button>
+            <button class="showcase-tab" type="button" data-tab="security" role="tab" aria-selected="false">
+              <span class="showcase-tab-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield"></use></svg></span>
+              <span><strong>Güvenlik</strong><small>Dosya tarama ve karantina</small></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="showcase-stage reveal" style="--delay:100ms">
+          <div class="showcase-panel is-active" data-panel="maintenance">
+            <div class="app-window">
+              <div class="app-window-bar">
+                <span class="window-dots"><i></i><i></i><i></i></span>
+                <span class="app-window-title">Bakım — Hızlı profil</span>
+                <span class="window-dots" style="opacity:0"><i></i><i></i><i></i></span>
+              </div>
+              <img src="assets/img/dashboard-dark.png" data-dark-src="assets/img/dashboard-dark.png" data-light-src="assets/img/dashboard-light.png" alt="Vortexis bakım ekranı" loading="lazy">
+            </div>
+            <p class="showcase-caption"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"></use></svg> Gerçek uygulama arayüzü · Vortexis 1.0</p>
+          </div>
+          <div class="showcase-panel" data-panel="monitor" hidden>
+            <div class="app-window">
+              <div class="app-window-bar">
+                <span class="window-dots"><i></i><i></i><i></i></span>
+                <span class="app-window-title">Tanılama — Canlı metrikler</span>
+                <span class="window-dots" style="opacity:0"><i></i><i></i><i></i></span>
+              </div>
+              <img src="assets/img/diagnostics-dark.png" data-dark-src="assets/img/diagnostics-dark.png" data-light-src="assets/img/diagnostics-light.png" alt="Vortexis canlı izleme ekranı" loading="lazy">
+            </div>
+            <p class="showcase-caption"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"></use></svg> Sıcaklık, disk ve bellek metrikleri</p>
+          </div>
+          <div class="showcase-panel" data-panel="network" hidden>
+            <div class="app-window">
+              <div class="app-window-bar">
+                <span class="window-dots"><i></i><i></i><i></i></span>
+                <span class="app-window-title">Ağ — Hız testi</span>
+                <span class="window-dots" style="opacity:0"><i></i><i></i><i></i></span>
+              </div>
+              <img src="assets/img/network-dark.png" data-dark-src="assets/img/network-dark.png" data-light-src="assets/img/network-light.png" alt="Vortexis ağ ve hız testi ekranı" loading="lazy">
+            </div>
+            <p class="showcase-caption"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"></use></svg> İndirme, yükleme, gecikme ve jitter</p>
+          </div>
+          <div class="showcase-panel" data-panel="security" hidden>
+            <div class="app-window">
+              <div class="app-window-bar">
+                <span class="window-dots"><i></i><i></i><i></i></span>
+                <span class="app-window-title">Güvenlik — Dosya tarama</span>
+                <span class="window-dots" style="opacity:0"><i></i><i></i><i></i></span>
+              </div>
+              <img src="assets/img/filescan-archive.png" alt="Vortexis dosya tarama ekranı" loading="lazy">
+            </div>
+            <p class="showcase-caption"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"></use></svg> Şüpheli dosyalar ve karantina kayıtları</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Threat Lab teaser -->
+    <section class="section" id="threat-lab">
+      <div class="container">
+        <div class="threat-panel reveal">
+          <div class="threat-copy">
+            <span class="section-kicker">Threat Lab</span>
+            <h2 class="section-title">Bir hash'in arkasında ne var?</h2>
+            <p>Hash, URL veya dosya adıyla hızlı bir ön inceleme başlatın. 24 güvenlik motorunun sinyallerini, topluluk verilerini ve risk skorunu tek ekranda görün.</p>
+            <form class="mini-scan" data-mini-scan>
+              <label class="sr-only" for="mini-scan-input">Hash, URL veya dosya adı</label>
+              <input id="mini-scan-input" type="text" name="q" placeholder="SHA-256, URL veya dosya adı girin…" autocomplete="off">
+              <button class="btn btn--primary" type="submit">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#search"></use></svg>
+                Tara
+              </button>
+            </form>
+            <div class="threat-actions">
+              <a class="link-arrow" href="scanner.html">Threat Lab'a git <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+              <span class="badge badge--amber">Demo arayüz</span>
+            </div>
+            <p class="threat-note"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#info"></use></svg> Gerçek dosya analizi için Vortexis masaüstü uygulamasını kullanın. Web tarayıcısı simüle edilmiş sonuç üretir.</p>
+          </div>
+          <div class="threat-visual">
+            <div class="mini-result">
+              <div class="mini-result-head">
+                <span class="mini-risk"><strong>6</strong></span>
+                <span><strong>Örnek rapor · Temiz</strong><small>0 / 24 motor tespit etti</small></span>
+                <span class="badge badge--green" style="margin-left:auto">Temiz</span>
+              </div>
+              <div class="mini-vendors">
+                <div class="mini-vendor"><span>Microsoft</span><span><i></i> Temiz</span></div>
+                <div class="mini-vendor"><span>Kaspersky</span><span><i></i> Temiz</span></div>
+                <div class="mini-vendor"><span>BitDefender</span><span><i></i> Temiz</span></div>
+                <div class="mini-vendor"><span>ESET-NOD32</span><span><i></i> Temiz</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quotes -->
+    <section class="section section--tight" id="feedback">
+      <div class="container">
+        <div class="section-head is-center reveal">
+          <span class="section-kicker">Erken erişim geri bildirimi</span>
+          <h2 class="section-title">Sade, hızlı ve tahmin edilebilir.</h2>
+          <p class="section-desc">Vortexis'i günlük iş akışında kullanan erken erişim kullanıcılarından birkaç not.</p>
+        </div>
+        <div class="quotes">
+          <article class="quote-card reveal" style="--delay:0ms">
+            <div class="quote-stars" aria-label="5 yıldız">
+              <svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg>
+            </div>
+            <blockquote class="quote-text">“Tek tık bakım, temizlik rutinimi dakikalardan saniyelere indirdi. Hangi işlemin yapıldığını görmek güven veriyor.”</blockquote>
+            <div class="quote-author">
+              <span class="avatar">BK</span>
+              <span><strong>Burak K.</strong><small>Yazılım geliştirici</small></span>
+            </div>
+          </article>
+          <article class="quote-card reveal" style="--delay:60ms">
+            <div class="quote-stars" aria-label="5 yıldız">
+              <svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg>
+            </div>
+            <blockquote class="quote-text">“Sıcaklık ve disk metriklerini aynı ekranda görmek büyük kolaylık. Arayüz gerçekten sakin ve okunabilir.”</blockquote>
+            <div class="quote-author">
+              <span class="avatar">SA</span>
+              <span><strong>Selin A.</strong><small>Grafik tasarımcı</small></span>
+            </div>
+          </article>
+          <article class="quote-card reveal" style="--delay:120ms">
+            <div class="quote-stars" aria-label="5 yıldız">
+              <svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg><svg class="icon"><use href="assets/icons.svg#star"></use></svg>
+            </div>
+            <blockquote class="quote-text">“Kurumsal makinelerde tek EXE ile dağıtım yapmak çok pratik. Yerel hesap yaklaşımı da işimizi kolaylaştırdı.”</blockquote>
+            <div class="quote-author">
+              <span class="avatar">MD</span>
+              <span><strong>Mert D.</strong><small>IT sorumlusu</small></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing teaser -->
+    <section class="section section--alt" id="plans">
+      <div class="container">
+        <div class="section-head is-center reveal">
+          <span class="section-kicker">Planlar</span>
+          <h2 class="section-title">Şimdilik ücretsiz. Sonrası için net.</h2>
+          <p class="section-desc">Tüm masaüstü özellikleri şu an ücretsiz. Pro ve Kurumsal planlar geliştirme aşamasında; erken erişim listesine katılabilirsiniz.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card price-card--featured reveal" style="--delay:0ms">
+            <span class="price-badge badge badge--accent">Şu an ücretsiz</span>
+            <span class="price-name">Desktop</span>
+            <div class="price-amount"><strong>₺0</strong><span>/ sürüm</span></div>
+            <p class="price-desc">Günlük bakım ve izleme için ihtiyacınız olan her şey.</p>
+            <ul class="price-list">
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> Tek tık bakım ve disk analizi</li>
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> Canlı sistem izleme</li>
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> Hız testi ve güvenlik kontrolleri</li>
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> TR / EN arayüz</li>
+            </ul>
+            <a class="btn btn--primary" href="download.html">Ücretsiz indir</a>
+          </article>
+          <article class="price-card reveal" style="--delay:60ms">
+            <span class="price-badge badge">Yakında</span>
+            <span class="price-name">Pro</span>
+            <div class="price-amount"><strong>—</strong><span>/ ay</span></div>
+            <p class="price-desc">Otomasyon ve çoklu cihaz yönetimi isteyenler için.</p>
+            <ul class="price-list">
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> Gelişmiş bakım otomasyonu</li>
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> Çoklu cihaz profilleri</li>
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> Öncelikli destek</li>
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> İsteğe bağlı bulut yedekleme</li>
+            </ul>
+            <a class="btn btn--ghost" href="pricing.html">Haberdar ol</a>
+          </article>
+          <article class="price-card reveal" style="--delay:120ms">
+            <span class="price-badge badge">İletişim</span>
+            <span class="price-name">Kurumsal</span>
+            <div class="price-amount"><strong>Özel</strong><span>/ ekip</span></div>
+            <p class="price-desc">Merkezi dağıtım ve raporlama gerektiren ekipler için.</p>
+            <ul class="price-list">
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> Merkezi yönetim ve politika</li>
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> Toplu dağıtım</li>
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> Özel raporlama</li>
+              <li><svg class="icon"><use href="assets/icons.svg#check"></use></svg> SLA ve öncelikli destek</li>
+            </ul>
+            <a class="btn btn--ghost" href="support.html#contact">İletişime geç</a>
+          </article>
+        </div>
+        <p class="price-note">Fiyatlar ve plan kapsamı geliştirme sürecinde değişebilir. Şu an ödeme alınmamaktadır.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head is-center reveal">
+          <span class="section-kicker">Sık sorulanlar</span>
+          <h2 class="section-title">Aklınızdaki ilk sorular.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">
+              Vortexis ücretsiz mi?
+              <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></span>
+            </button>
+            <div class="faq-answer" hidden>Evet. Şu an tüm masaüstü özellikleri ücretsizdir. Pro ve Kurumsal planlar henüz geliştirme aşamasındadır; bu sayfada ödeme alınmaz.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">
+              Hangi Windows sürümleri destekleniyor?
+              <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></span>
+            </button>
+            <div class="faq-answer" hidden>Windows 10 21H2 ve üzeri ile Windows 11, 64-bit mimaride desteklenir. Kurulum için yönetici izni gerekir.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">
+              Verilerim nereye gidiyor?
+              <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></span>
+            </button>
+            <div class="faq-answer" hidden>Hesap ve ayarlar yerel olarak saklanır. Web sitesindeki demo hesap yalnızca tarayıcınızın yerel depolamasını kullanır. Gerçek üretim sürümünde veri akışı açıkça belgelenir.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">
+              Windows Defender ile çakışır mı?
+              <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></span>
+            </button>
+            <div class="faq-answer" hidden>Hayır. Vortexis, Defender'ın yerine geçmez; durumunu ve karantina kayıtlarını okur. Gerçek zamanlı koruma için Defender'ı etkin tutmanız önerilir.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">
+              Threat Lab gerçek bir tarama mı?
+              <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></span>
+            </button>
+            <div class="faq-answer" hidden>Web sitesindeki Threat Lab bir arayüz demosudur; simüle edilmiş sonuç üretir. Gerçek dosya analizi için masaüstü uygulamasını veya yetkili bir tarama servisini kullanın.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">
+              Nasıl kaldırabilirim?
+              <span class="faq-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-down"></use></svg></span>
+            </button>
+            <div class="faq-answer" hidden>Windows Ayarlar &gt; Uygulamalar bölümünden Vortexis'i kaldırabilirsiniz. Kullanıcı verileri isteğe bağlı olarak saklanır; tamamen silmek için yerel uygulama verisi klasörünü de temizleyin.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="cta-copy">
+            <h2>Sisteminizi bir kez kurun. Rutini Vortexis'e bırakın.</h2>
+            <p>Windows 11 veya 10 kullanıyorsanız kurulum birkaç dakika sürer. Tek EXE, sade arayüz, yerel hesap.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn--primary btn--lg" href="download.html"><svg class="icon"><use href="assets/icons.svg#download"></use></svg> Ücretsiz indir</a>
+            <a class="btn btn--ghost btn--lg" href="features.html">Özellikleri gör</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+            <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+            <span class="brand-word">VORTEXIS</span>
+          </a>
+          <p>Windows için sade, yerel ve gizlilik odaklı sistem bakımı. Bakım, izleme, hız ve güvenlik tek panelde.</p>
+          <div class="newsletter">
+            <p>Ürün güncellemeleri ve güvenlik notları için abone olun.</p>
+            <form class="newsletter-row" data-newsletter>
+              <input type="email" name="email" placeholder="E-posta adresiniz" aria-label="E-posta adresiniz" required>
+              <button class="btn btn--primary" type="submit">Abone ol</button>
+            </form>
+          </div>
+          <div class="footer-social">
+            <a href="#" data-link="github" data-external aria-label="GitHub"><svg class="icon"><use href="assets/icons.svg#github"></use></svg></a>
+            <a href="mailto:vortexisecure@gmail.com" aria-label="E-posta"><svg class="icon"><use href="assets/icons.svg#mail"></use></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Ürün</h4>
+          <a href="features.html">Özellikler</a>
+          <a href="scanner.html">Threat Lab</a>
+          <a href="download.html">İndir</a>
+          <a href="pricing.html">Planlar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kaynaklar</h4>
+          <a href="support.html">Destek</a>
+          <a href="support.html#faq">SSS</a>
+          <a href="download.html#release-notes">Sürüm notları</a>
+          <a href="#" data-link="github" data-external>GitHub</a>
+        </div>
+        <div class="footer-col">
+          <h4>Yasal</h4>
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html#contact">İletişim</a>
+          <a href="scanner.html#disclaimer">Tarama uyarısı</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Vortexis. Tüm hakları saklıdır.</span>
+        <div class="footer-legal">
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html">Destek</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

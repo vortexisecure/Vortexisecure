@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destek — Vortexis</title>
+  <meta name="description" content="Vortexis kurulum, hesap, güvenlik ve hız testi sorularınız için destek ve SSS.">
+  <link rel="canonical" href="https://vortexisecure.github.io/Vortexisecure/support.html">
+  <meta name="theme-color" content="#06070b">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/img/logo-256.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-256.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("vortexis.theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        document.documentElement.classList.add("js");
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="support">
+  <a class="sr-only" href="#main">İçeriğe geç</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+        <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+        <span class="brand-word">VORTEXIS</span>
+        <span class="brand-badge">WEB</span>
+      </a>
+      <nav class="nav-links" aria-label="Ana menü">
+        <a class="nav-link" data-nav="home" href="index.html">Ana Sayfa</a>
+        <a class="nav-link" data-nav="features" href="features.html">Özellikler</a>
+        <a class="nav-link" data-nav="scanner" href="scanner.html">Threat Lab</a>
+        <a class="nav-link" data-nav="download" href="download.html">İndir</a>
+        <a class="nav-link" data-nav="pricing" href="pricing.html">Planlar</a>
+        <a class="nav-link" data-nav="support" href="support.html">Destek</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" type="button" data-search-open aria-label="Sitede ara" title="Sitede ara (Ctrl+K)">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#search"></use></svg>
+        </button>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Açık temaya geç" title="Açık tema">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sun"></use></svg>
+        </button>
+        <a class="btn btn--ghost nav-login" data-auth="guest" href="login.html">Giriş</a>
+        <a class="btn btn--primary" data-auth="guest" href="download.html"><svg class="icon"><use href="assets/icons.svg#download"></use></svg> Ücretsiz indir</a>
+        <a class="nav-user" data-auth="user" href="account.html" hidden>
+          <span class="nav-avatar" data-auth-initials>V</span>
+          <span data-auth-name>Hesabım</span>
+        </a>
+        <button class="icon-btn mobile-toggle" type="button" data-menu-toggle aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#menu"></use></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <nav aria-label="Mobil menü">
+        <a class="mobile-link" data-nav="home" href="index.html">Ana Sayfa <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="features" href="features.html">Özellikler <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="scanner" href="scanner.html">Threat Lab <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="download" href="download.html">İndir <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="pricing" href="pricing.html">Planlar <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+        <a class="mobile-link" data-nav="support" href="support.html">Destek <svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg></a>
+      </nav>
+      <div class="mobile-actions">
+        <a class="btn btn--ghost" data-auth="guest" href="login.html">Giriş yap</a>
+        <a class="btn btn--ghost" data-auth="guest" href="register.html">Kayıt ol</a>
+        <a class="btn btn--primary" href="download.html">Ücretsiz indir</a>
+        <a class="btn btn--ghost" data-auth="user" href="account.html" hidden>Hesabım</a>
+        <button class="btn btn--ghost" type="button" data-auth="user" data-logout hidden>Çıkış yap</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="support-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="index.html">Ana Sayfa</a><svg class="icon"><use href="assets/icons.svg#chevron-right"></use></svg><span>Destek</span></div>
+        <div class="page-hero-inner reveal">
+          <span class="section-kicker">Destek merkezi</span>
+          <h1 class="page-hero-title">Yardım mı lazım? <span class="text-gradient">Doğru yerdesiniz.</span></h1>
+          <p class="page-hero-lead">Kurulum, hesap, güvenlik ve hız testi hakkında en sık sorulan sorular. Aradığınızı bulamazsanız aşağıdaki formdan bize yazın.</p>
+          <div class="support-search">
+            <svg class="icon"><use href="assets/icons.svg#search"></use></svg>
+            <input type="search" data-faq-search data-faq-scope="#support-faq" placeholder="Destek yazılarında ara…" aria-label="Destek yazılarında ara">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="support-grid">
+          <a class="support-card reveal" href="#support-faq">
+            <span class="feature-icon"><svg class="icon"><use href="assets/icons.svg#download"></use></svg></span>
+            <h3>Kurulum ve kaldırma</h3>
+            <p>Kurulum sihirbazı, yönetici izni, SmartScreen ve temiz kaldırma adımları.</p>
+          </a>
+          <a class="support-card reveal" style="--delay:60ms" href="#support-faq">
+            <span class="feature-icon"><svg class="icon"><use href="assets/icons.svg#user"></use></svg></span>
+            <h3>Hesap ve oturum</h3>
+            <p>Yerel hesap, parola, e-posta doğrulama ve oturum davranışı.</p>
+          </a>
+          <a class="support-card reveal" style="--delay:120ms" href="#support-faq">
+            <span class="feature-icon"><svg class="icon"><use href="assets/icons.svg#shield"></use></svg></span>
+            <h3>Güvenlik ve gizlilik</h3>
+            <p>Defender durumu, giriş kayıtları, yerel veri ve gönderici bilgisi.</p>
+          </a>
+          <a class="support-card reveal" href="#support-faq">
+            <span class="feature-icon"><svg class="icon"><use href="assets/icons.svg#gauge"></use></svg></span>
+            <h3>Hız testi</h3>
+            <p>Ölçüm doğruluğu, gecikme, jitter ve sonuçların yorumlanması.</p>
+          </a>
+          <a class="support-card reveal" style="--delay:60ms" href="scanner.html">
+            <span class="feature-icon"><svg class="icon"><use href="assets/icons.svg#scan"></use></svg></span>
+            <h3>Threat Lab</h3>
+            <p>Hash, URL ve dosya ön incelemesi; demo sonuçların sınırları.</p>
+          </a>
+          <a class="support-card reveal" style="--delay:120ms" href="#contact">
+            <span class="feature-icon"><svg class="icon"><use href="assets/icons.svg#message-circle"></use></svg></span>
+            <h3>İletişim</h3>
+            <p>Form, e-posta ve GitHub üzerinden sorun bildirimi.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="support-faq">
+      <div class="container">
+        <div class="section-head is-center reveal">
+          <span class="section-kicker">Sık sorulanlar</span>
+          <h2 class="section-title">Hızlı cevaplar.</h2>
+          <p class="section-desc">Arama kutusuna bir kelime yazın; yalnızca ilgili sorular görünsün.</p>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item" data-faq-item>
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">Vortexis'i nasıl kurarım?<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>İndirme sayfasından <span data-release-file>VortexisSetup.exe</span> dosyasını indirin. Sağ tıklayıp “Yönetici olarak çalıştır” seçin ve kurulum sihirbazını takip edin. Kurulum tamamlandığında Vortexis açılır ve yerel hesap oluşturmanızı ister.</div>
+          </div>
+          <div class="faq-item" data-faq-item>
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">SmartScreen uyarısı neden çıkıyor?<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>Yeni yayınlanan ve dijital olarak imzalanmamış kurulum dosyalarında SmartScreen uyarısı görülebilir. Dosyanın SHA-256 özetini indirme sayfasındaki değerle karşılaştırın. Eşleşiyorsa “Daha fazla bilgi” &gt; “Yine de çalıştır” ile devam edebilirsiniz.</div>
+          </div>
+          <div class="faq-item" data-faq-item>
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">Parolamı unuttum, ne yapmalıyım?<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>Masaüstü uygulamada parola sıfırlama akışı e-posta doğrulamasına bağlıdır. Web demosunda hesap bilgileri yalnızca tarayıcıda tutulduğu için tarayıcı verilerini temizlemek hesabı sıfırlar. Üretim sürümünde sunucu tarafı sıfırlama akışı kullanılacaktır.</div>
+          </div>
+          <div class="faq-item" data-faq-item>
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">Giriş kayıtları nerede tutuluyor?<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>Masaüstü uygulamada giriş kayıtları varsayılan olarak kapalıdır. Etkinleştirilirse dosya <code>%LOCALAPPDATA%\Vortexis\.audit\login.log</code> konumunda tutulur ve yalnızca mevcut Windows kullanıcısı ile SYSTEM tarafından okunabilir. Web sitesinde giriş kaydı tutulmaz.</div>
+          </div>
+          <div class="faq-item" data-faq-item>
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">Vortexis Defender'ın yerini alır mı?<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>Hayır. Vortexis gerçek zamanlı bir antivirüs motoru değildir. Defender'ın durumunu ve karantina kayıtlarını okur; mevcut korumanızı daha görünür hale getirir. Defender'ı etkin tutmanız önerilir.</div>
+          </div>
+          <div class="faq-item" data-faq-item>
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">Hız testi sonuçları neden değişiyor?<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>Ağ koşulları, Wi-Fi sinyali, arka plan indirmeleri ve sunucu seçimi sonuçları etkiler. Daha tutarlı bir karşılaştırma için testleri aynı saatlerde ve kablolu bağlantıyla yapın.</div>
+          </div>
+          <div class="faq-item" data-faq-item>
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">Threat Lab sonuçlarına güvenebilir miyim?<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>Web sitesindeki Threat Lab bir demo arayüzüdür ve simüle edilmiş sonuç üretir. Güvenlik kararlarınızı yalnızca bu sonuçlara dayandırmayın. Gerçek dosya analizi için masaüstü uygulamasını veya yetkili bir tarama servisini kullanın.</div>
+          </div>
+          <div class="faq-item" data-faq-item>
+            <button class="faq-question" type="button" data-accordion aria-expanded="false">Vortexis'i nasıl kaldırırım?<span class="faq-icon"><svg class="icon"><use href="assets/icons.svg#chevron-down"></use></svg></span></button>
+            <div class="faq-answer" hidden>Windows Ayarlar &gt; Uygulamalar &gt; Yüklü uygulamalar bölümünden Vortexis'i seçip kaldırın. Kullanıcı verilerini de silmek isterseniz yerel uygulama verisi klasörünü temizleyin. Kaldırma işlemi öncesinde tarama geçmişinizi dışa aktarmanız önerilir.</div>
+          </div>
+          <div class="faq-empty" data-faq-empty hidden>Bu aramayla eşleşen bir soru bulunamadı. <a href="#contact" style="color:var(--accent-2)">Bize yazın</a>.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-kicker">İletişim</span>
+          <h2 class="section-title">Bulamadığınız cevabı birlikte bulalım.</h2>
+          <p class="section-desc">Formu doldurun; mesajınız bu tarayıcıda saklanır ve demo akışta başarılı görünür. Gerçek destek için GitHub Issues veya e-posta kanalını kullanabilirsiniz.</p>
+        </div>
+        <div class="contact-grid">
+          <form class="contact-form reveal" data-contact-form>
+            <div class="field">
+              <label for="contact-name">Adınız</label>
+              <input class="input" id="contact-name" name="name" type="text" placeholder="Adınız ve soyadınız" required>
+            </div>
+            <div class="field">
+              <label for="contact-email">E-posta</label>
+              <input class="input" id="contact-email" name="email" type="email" placeholder="ornek@eposta.com" required>
+            </div>
+            <div class="field">
+              <label for="contact-subject">Konu</label>
+              <select class="input" id="contact-subject" name="subject">
+                <option>Kurulum</option>
+                <option>Hesap ve oturum</option>
+                <option>Güvenlik</option>
+                <option>Hız testi</option>
+                <option>Threat Lab</option>
+                <option>Diğer</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="contact-message">Mesajınız</label>
+              <textarea class="input" id="contact-message" name="message" placeholder="Sorununuzu veya önerinizi kısaca anlatın…" required></textarea>
+            </div>
+            <button class="btn btn--primary btn--block" type="submit"><svg class="icon"><use href="assets/icons.svg#send"></use></svg> Mesajı gönder</button>
+            <p class="auth-note">Bu form demo amaçlıdır; mesajlar yalnızca tarayıcınızda saklanır.</p>
+          </form>
+          <div class="contact-info reveal" style="--delay:80ms">
+            <div class="contact-item">
+              <span class="feature-icon"><svg class="icon"><use href="assets/icons.svg#mail"></use></svg></span>
+              <div><strong>E-posta</strong><small><a href="mailto:vortexisecure@gmail.com">vortexisecure@gmail.com</a></small></div>
+            </div>
+            <div class="contact-item">
+              <span class="feature-icon"><svg class="icon"><use href="assets/icons.svg#github"></use></svg></span>
+              <div><strong>GitHub Issues</strong><small><a href="#" data-link="issues" data-external>Sorun bildir veya öneri aç</a></small></div>
+            </div>
+            <div class="contact-item">
+              <span class="feature-icon"><svg class="icon"><use href="assets/icons.svg#clock"></use></svg></span>
+              <div><strong>Yanıt süresi</strong><small>Genellikle 1–2 iş günü. Demo formda anlık dönüş yoktur.</small></div>
+            </div>
+            <div class="contact-item">
+              <span class="feature-icon"><svg class="icon"><use href="assets/icons.svg#shield"></use></svg></span>
+              <div><strong>Güvenlik bildirimi</strong><small>Güvenlik açığı bildirirken hassas bilgi paylaşmayın; özel kanalı kullanın.</small></div>
+            </div>
+            <div class="notice">
+              <svg class="icon"><use href="assets/icons.svg#info"></use></svg>
+              <span>Destek talebinizde Windows sürümü, Vortexis sürümü ve hata mesajını eklemek çözüm süresini kısaltır.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Vortexis ana sayfa">
+            <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+            <span class="brand-word">VORTEXIS</span>
+          </a>
+          <p>Windows için sade, yerel ve gizlilik odaklı sistem bakımı. Bakım, izleme, hız ve güvenlik tek panelde.</p>
+          <div class="newsletter">
+            <p>Ürün güncellemeleri ve güvenlik notları için abone olun.</p>
+            <form class="newsletter-row" data-newsletter>
+              <input type="email" name="email" placeholder="E-posta adresiniz" aria-label="E-posta adresiniz" required>
+              <button class="btn btn--primary" type="submit">Abone ol</button>
+            </form>
+          </div>
+          <div class="footer-social">
+            <a href="#" data-link="github" data-external aria-label="GitHub"><svg class="icon"><use href="assets/icons.svg#github"></use></svg></a>
+            <a href="mailto:vortexisecure@gmail.com" aria-label="E-posta"><svg class="icon"><use href="assets/icons.svg#mail"></use></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Ürün</h4>
+          <a href="features.html">Özellikler</a>
+          <a href="scanner.html">Threat Lab</a>
+          <a href="download.html">İndir</a>
+          <a href="pricing.html">Planlar</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kaynaklar</h4>
+          <a href="support.html">Destek</a>
+          <a href="support.html#faq">SSS</a>
+          <a href="download.html#release-notes">Sürüm notları</a>
+          <a href="#" data-link="github" data-external>GitHub</a>
+        </div>
+        <div class="footer-col">
+          <h4>Yasal</h4>
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html#contact">İletişim</a>
+          <a href="scanner.html#disclaimer">Tarama uyarısı</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Vortexis. Tüm hakları saklıdır.</span>
+        <div class="footer-legal">
+          <a href="privacy.html">Gizlilik</a>
+          <a href="terms.html">Kullanım şartları</a>
+          <a href="support.html">Destek</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

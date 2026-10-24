@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giriş yap — Vortexis</title>
+  <meta name="description" content="Vortexis hesabınıza giriş yapın.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#06070b">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/img/logo-256.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-256.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("vortexis.theme");
+        document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        document.documentElement.classList.add("js");
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="login" data-auth-page>
+  <div class="auth-page">
+    <aside class="auth-aside">
+      <a class="brand auth-brand" href="index.html" aria-label="Vortexis ana sayfa">
+        <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+        <span class="brand-word">VORTEXIS</span>
+        <span class="brand-badge">WEB</span>
+      </a>
+      <div class="auth-aside-inner">
+        <span class="section-kicker">Tekrar hoş geldiniz</span>
+        <h2>Sisteminiz sizi bekliyor.</h2>
+        <p>Yerel hesabınızla giriş yapın; bakım, izleme ve tarama geçmişinize kaldığınız yerden devam edin.</p>
+        <ul class="auth-feature-list">
+          <li><svg class="icon"><use href="assets/icons.svg#check-circle"></use></svg> Parolalar PBKDF2-SHA256 ile işlenir</li>
+          <li><svg class="icon"><use href="assets/icons.svg#check-circle"></use></svg> Oturum yalnızca bu tarayıcıda saklanır</li>
+          <li><svg class="icon"><use href="assets/icons.svg#check-circle"></use></svg> Bulut zorunluluğu yok</li>
+        </ul>
+        <div class="auth-aside-visual">
+          <img src="assets/img/dashboard-dark.png" data-dark-src="assets/img/dashboard-dark.png" data-light-src="assets/img/dashboard-light.png" alt="Vortexis sistem paneli" loading="lazy">
+        </div>
+      </div>
+      <p class="auth-note" style="text-align:left;position:relative;z-index:1">© <span data-year>2026</span> Vortexis · <a href="privacy.html" style="color:var(--muted)">Gizlilik</a> · <a href="terms.html" style="color:var(--muted)">Kullanım şartları</a></p>
+    </aside>
+
+    <main class="auth-main">
+      <div class="auth-card">
+        <a class="brand auth-mobile-brand" href="index.html" aria-label="Vortexis ana sayfa">
+          <img class="brand-mark" src="assets/img/logo-256.png" alt="" width="36" height="36">
+          <span class="brand-word">VORTEXIS</span>
+        </a>
+        <div class="auth-head">
+          <h1>Hesabınıza giriş yapın.</h1>
+          <p>E-posta ve parolanızla devam edin. Henüz hesabınız yok mu? <a href="register.html" style="color:var(--accent-2);font-weight:800">Kayıt olun</a>.</p>
+        </div>
+
+        <form class="auth-form" data-auth-form="login" novalidate>
+          <div class="auth-error" data-auth-error hidden></div>
+          <div class="field">
+            <label for="login-email">E-posta</label>
+            <div class="input-wrap">
+              <svg class="icon"><use href="assets/icons.svg#mail"></use></svg>
+              <input class="input" id="login-email" name="email" type="email" placeholder="ornek@eposta.com" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="login-password">Parola</label>
+            <div class="input-wrap">
+              <svg class="icon"><use href="assets/icons.svg#key"></use></svg>
+              <input class="input has-toggle" id="login-password" name="password" type="password" placeholder="Parolanız" autocomplete="current-password" required>
+              <button class="password-toggle" type="button" data-password-toggle data-target="#login-password" aria-label="Parolayı göster">
+                <svg class="icon"><use href="assets/icons.svg#eye"></use></svg>
+              </button>
+            </div>
+          </div>
+          <div class="form-row">
+            <label class="checkbox"><input type="checkbox" name="remember" checked> Beni hatırla</label>
+            <a class="form-link" href="support.html#contact">Parolamı unuttum</a>
+          </div>
+          <button class="btn btn--primary btn--lg btn--block" type="submit">
+            <svg class="icon"><use href="assets/icons.svg#arrow-right"></use></svg>
+            Giriş yap
+          </button>
+        </form>
+
+        <div class="auth-divider">demo hesabı</div>
+        <div class="demo-box">
+          <svg class="icon"><use href="assets/icons.svg#info"></use></svg>
+          <p><strong>Demo hesap:</strong> <span>vortexisecure@gmail.com</span>. Parola olarak daha önce verdiğiniz uygulama şifresini kullanın. <button type="button" data-fill-demo>E-postayı doldur</button></p>
+        </div>
+
+        <p class="auth-alt">Hesabınız yok mu? <a href="register.html">Ücretsiz kayıt olun</a></p>
+        <p class="auth-note">Bu site statik bir demo sürümüdür. Oturum bilgisi yalnızca bu tarayıcıda saklanır; gerçek üretim kimlik doğrulaması için sunucu tarafı servis gerekir.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
