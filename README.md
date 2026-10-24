@@ -1,6 +1,10 @@
 # Vortexis Web
 
-Vortexis Windows uygulamasının tanıtım, indirme, destek ve demo tarama sitesi. Statik HTML/CSS/JavaScript ile hazırlanmıştır; GitHub Pages üzerinde doğrudan yayınlanabilir.
+Vortexis Windows uygulamasının tanıtım, indirme, destek ve demo tarama sitesi. Statik HTML/CSS/JavaScript ile hazırlanmıştır; GitHub Pages üzerinde yayınlanmaktadır.
+
+- Canlı site: https://vortexisecure.github.io/Vortexisecure/
+- Sürümler: https://github.com/vortexisecure/Vortexisecure/releases
+- Son sürüm: https://github.com/vortexisecure/Vortexisecure/releases/latest
 
 > **Önemli:** Bu depo bir üretim kimlik doğrulama sistemi veya gerçek bir antivirüs tarama servisi içermez. Giriş/kayıt ve Threat Lab tamamen tarayıcıda çalışan demodur. Ayrıntılar için aşağıdaki bölümlere bakın.
 
@@ -104,19 +108,25 @@ Gerçek tarama için bir arka uç servisi ve güvenilir bir tehdit istihbaratı 
 
 ## GitHub Pages ile yayınlama
 
-1. Bu klasörü bir Git deposuna dönüştürün:
-   ```powershell
-   git init
-   git add .
-   git commit -m "Vortexis web sitesi"
-   git branch -M main
-   git remote add origin https://github.com/vortexisecure/Vortexisecure.git
-   git push -u origin main
-   ```
-2. GitHub deposunda **Settings → Pages** bölümüne gidin.
-3. **Build and deployment → Source** olarak **GitHub Actions** seçin.
-4. `.github/workflows/pages.yml` her `main` push'unda siteyi yayınlar.
-5. İlk çalıştırmadan sonra **Actions** sekmesinden dağıtımı kontrol edin.
+Site bu depo için GitHub Actions ile yayınlanacak şekilde yapılandırıldı ve ilk dağıtım tamamlandı. Yeni bir değişiklik yayınlamak için:
+
+```powershell
+git add .
+git commit -m "Site güncellemesi"
+git push origin main
+```
+
+`.github/workflows/pages.yml` her `main` push'unda siteyi yeniden yayınlar. Dağıtım durumunu **Actions** sekmesinden veya şu komutla kontrol edebilirsiniz:
+
+```powershell
+gh run list --repo vortexisecure/Vortexisecure
+```
+
+İlk kurulumda **Settings → Pages → Build and deployment → Source** olarak **GitHub Actions** seçilmelidir. Pages henüz etkin değilse API ile de etkinleştirilebilir:
+
+```powershell
+gh api -X POST repos/vortexisecure/Vortexisecure/pages -f build_type=workflow
+```
 
 ### Özel alan adı
 
@@ -141,8 +151,10 @@ Ayrıca DNS sağlayıcınızda gerekli `A` / `CNAME` kayıtlarını tanımlayın
 
 Mevcut sürüm bilgisi:
 
+- Sürüm: `1.0.0` (kararlı)
+- İndirme: https://github.com/vortexisecure/Vortexisecure/releases/latest
 - Dosya: `VortexisSetup.exe`
-- Boyut: `132,6 MB`
+- Boyut: `132,6 MB` (`139.090.623` bayt)
 - SHA-256: `DE396BF930687390D1393A30DF25D72515F3AC343E1D11F44F61272AFEF022F1`
 
 ## Güvenlik notları
@@ -155,18 +167,19 @@ Mevcut sürüm bilgisi:
 
 ## Test kontrol listesi
 
-- [ ] Tüm sayfalar açılıyor ve konsolda hata yok.
-- [ ] Tema değiştirme kalıcı ve tüm sayfalarda tutarlı.
-- [ ] Mobil menü açılıp kapanıyor; klavye ile kullanılabiliyor.
-- [ ] `Ctrl+K` arama paleti çalışıyor.
-- [ ] Demo kayıt, giriş, çıkış ve hesap silme akışları çalışıyor.
-- [ ] Profil adı ve parola güncelleme çalışıyor.
-- [ ] Threat Lab hash, URL ve dosya modları çalışıyor.
-- [ ] Dosya taramasında dosya seçici tek kez açılıyor.
-- [ ] Tarama geçmişi hesap sayfasında görünüyor ve temizlenebiliyor.
-- [ ] JSON rapor indirme ve bağlantı kopyalama çalışıyor.
-- [ ] `404.html` bilinmeyen yollarda görüntüleniyor (GitHub Pages için özel yapılandırma gerekebilir).
-- [ ] `manifest.webmanifest`, `robots.txt` ve `sitemap.xml` erişilebilir.
+- [x] Tüm sayfalar açılıyor ve konsolda hata yok.
+- [x] Tema değiştirme kalıcı ve tüm sayfalarda tutarlı.
+- [x] Mobil menü açılıp kapanıyor; klavye ile kullanılabiliyor.
+- [x] `Ctrl+K` arama paleti çalışıyor.
+- [x] Demo kayıt, giriş, çıkış ve hesap silme akışları çalışıyor.
+- [x] Profil adı ve parola güncelleme çalışıyor.
+- [x] Threat Lab hash, URL ve dosya modları çalışıyor.
+- [x] Dosya taramasında dosya seçici tek kez açılıyor.
+- [x] Tarama geçmişi hesap sayfasında görünüyor ve temizlenebiliyor.
+- [x] JSON rapor indirme ve bağlantı kopyalama çalışıyor.
+- [x] `404.html` bilinmeyen yollarda görüntüleniyor.
+- [x] `manifest.webmanifest`, `robots.txt` ve `sitemap.xml` erişilebilir.
+- [x] GitHub Pages dağıtımı ve `releases/latest` indirme bağlantısı doğrulandı.
 
 ## Lisans
 
